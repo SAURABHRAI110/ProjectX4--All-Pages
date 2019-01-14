@@ -1,0 +1,238 @@
+/*
+* Design and Code: Saurabh Rai
+*/
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+@font-face {
+  src: url("Font/CircularStd-Bold.otf");
+  font-family: saurabh;
+}
+
+@font-face {
+  src: url("Font/CircularStd-Book.otf");
+  font-family: saurabh-book;
+}
+
+::selection {
+  background: #ff556a;
+  color: white;
+}
+
+
+.home-section-1 {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+/* Vertical Line */
+
+.vl {
+  border-left: 1px solid #D8D8D8;
+  height: 100vh;
+  position: fixed;
+  z-index: 0;
+
+}
+
+.vl1 {
+  left: 20%;
+  margin-left: -3px;
+  top: 0;
+}
+
+.vl2 {
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
+}
+
+.vl3 {
+  left: 80%;
+  margin-left: -3px;
+  top: 0;
+}
+
+.dot {
+  height: 35px;
+  width: 35px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+
+.dot1 {
+  left: 20%;
+  margin-left: -20px;
+  top: 16%;
+  background-color: #FC3A52;
+}
+
+.dot2 {
+  left: 50%;
+  margin-left: -20px;
+  top: 35%;
+  background-color: #F6ECDD;
+}
+
+.dot3 {
+  left: 80%;
+  margin-left: -20px;
+  top: 3%;
+  background-color: #372154;
+}
+
+.hero-title-div {
+  position: absolute;
+  margin-left: 20%;
+  margin-top: 12%;
+}
+
+.hero-title {
+  font-family: saurabh;
+  font-size: 95px;
+  position: relative;
+  line-height: 92px;
+  color: #171717;
+}
+
+.outlined {
+  -webkit-text-stroke: 0.6px black;
+  color: transparent;
+}
+
+.hero-para {
+  margin-top: 10px;
+
+}
+
+.hero-para {
+  font-family: saurabh-book;
+  font-size: 23px;
+  margin-top: -13px;
+
+}
+
+.hero-circle {
+  position: absolute;
+  right: 20%;
+  top: 22%;
+  display: flex;
+  z-index: 0;
+
+
+}
+
+/* Section two 
+gallery with grid and changing image with time and parallax */
+
+.section-2-container {
+  display: flex;
+  height: 145vh;
+  width: 70%;
+  align-items: center;
+  align-content: center;
+  margin-left: 17%;
+}
+
+.home-section-2 {
+  display: grid;
+  grid-gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  grid-auto-rows: auto;
+  grid-auto-flow: dense;
+  height: auto;
+  width: 100%;
+  z-index: 1;
+  /* grid-area:
+    "a b c d e f"
+    "g h i j k l"
+    "m n o p q r"; */
+
+}
+
+
+
+.home-section-2>.bottom-fit {
+
+  align-items: flex-end;
+  font-size: 2em;
+  color: #ffeead;
+  display: flex;
+
+}
+
+.home-section-2>.middle-fit {
+
+  align-items: center;
+  font-size: 2em;
+  color: #ffeead;
+  display: flex;
+
+}
+
+.home-section-2>.up-fit {
+
+  align-items: baseline;
+  font-size: 2em;
+  color: #ffeead;
+  display: flex;
+
+}
+
+.home-section-2>div>img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/*  */
+
+.home-section3 {
+  display: flex;
+  height: 170vh;
+  width: 100%;
+  background-color: #F4F4F4;
+
+}
+
+.vertical-text {
+
+  transform: rotate(-90deg);
+  position: absolute;
+  transform-origin: top left;
+  bottom: 0;
+  left: 50%;
+  left: 10%;
+  text-align: center;
+  color: #FC3A52;
+
+
+}
+
+/* Canvas Artboard ___________________*/
+
+.canvas-artboard {
+  display: block;
+  width: 35.1vh;
+  height: 46.8vh;
+  position: relative;
+  left: 64%;
+  transform: translateX(-11.05vh);
+  top: 30%;
+  border-width: .2vh;
+  border-color: #FC3A52;
+  border-style: dashed;
+  transition: top 1.5s ease-in-out;
+  background-color: white;
+
+
+}
