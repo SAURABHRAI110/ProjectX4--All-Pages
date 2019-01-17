@@ -10,23 +10,23 @@
 </head>
 
 <body>
-  <div class="vl1 vl"></div>
-  <div class="vl2 vl"></div>
-  <div class="vl3 vl"></div>
-  <span class="dot dot1"></span>
-  <span class="dot dot2"></span>
-  <span class="dot dot3"></span>
+
   <div class="home-section-1">
-    <canvas class="fireworks"></canvas>
+    <div class="vl1 vl"></div>
+    <div class="vl2 vl"></div>
+    <div class="vl3 vl"></div>
+    <span class="dot dot1"></span>
+    <span class="dot dot2"></span>
+    <span class="dot dot3"></span>
     <span class="hero-circle"><img src="assets/hero-circle.svg"> </span>
     <div class="hero-title-div">
       <h1 class="hero-title">
-        Senior <br />
+        Experience <br />
         <span class="outlined"> Designer </span> At<br />
         Feeding Trends
       </h1>
       <div>
-        <p class="hero-para">This website is my personal space where I'm trying to <br>
+        <p class="hero-para para">This website is my personal space where I'm trying to <br>
           express my creativity through design, code and writing.</p>
       </div>
     </div>
@@ -52,6 +52,9 @@
 
     </div>
   </div>
+
+  <!-- Home Section 3 -->
+
   <div class="home-section3">
     <div class="hero-title-div">
       <h1 class="hero-title">
@@ -68,14 +71,83 @@
         </span>
       </h1>
       <div>
-        <p class="hero-para">If this is your first time on my website.<br>
+        <p class="hero-para para">If this is your first time on my website.<br>
           You are here for a surprise. I am an artist,<br> so does you. Draw anything you love.</p>
       </div>
+      <div class="user-drawing-div">
+        <div class="user-drawing"></div>
+        <div class="user-drawing"></div>
+        <div class="user-drawing"></div>
+        <div class="user-drawing"></div>
+        <div class="user-drawing"></div>
+        <div class="user-drawing"></div>
+      </div>
+      <p class="artist-you para">
+        You are an artist. Here it is the art in you.<br>
+
+      </p>
     </div>
     <div class="canvas-artboard"></div>
 
+
   </div>
+
+  <!-- <div class="section4-showcase">
+    <div class="video-dimension">
+      <video autoplay muted loop id="myVideo">
+        <source src="assets/saurabh-showcase.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+
+      </video>
+      <button id="myBtn" onclick="myFunction()">Pause</button>
+    </div>
+
+  </div> -->
+
+  <div class="section-4-work">
+    <div class="hero-title-div">
+      <h1 class="hero-title">
+        A Small <br>
+        Selection of my<br>
+        <span class="outlined"> Work </span>
+        I Enjoy.
+      </h1>
+      <div>
+        <p class="hero-para para">This website is my personal space where I'm trying to <br>
+          express my creativity through design, code and writing.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="Section5-work">
+    <div work-one></div>
+    <div work-one></div>
+    <div work-one></div>
+    <div work-one></div>
+    <div work-one></div>
+    <div work-one></div>
+  </div>
+
+
+
+
+
   <script src="anime.js"></script>
+  <script>
+    var video = document.getElementById("myVideo");
+    var btn = document.getElementById("myBtn");
+
+    function myFunction() {
+      if (video.paused) {
+        video.play();
+        btn.innerHTML = "Pause";
+      } else {
+        video.pause();
+        btn.innerHTML = "Play";
+      }
+    }
+  </script>
 </body>
 
 </html>

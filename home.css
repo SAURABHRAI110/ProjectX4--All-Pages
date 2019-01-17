@@ -23,23 +23,22 @@ body {
   color: white;
 }
 
-
 .home-section-1 {
   height: 90vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   background-color: white;
+  position: relative;
 }
 
 /* Vertical Line */
 
 .vl {
-  border-left: 1px solid #D8D8D8;
+  border-left: 1px solid #d8d8d8;
   height: 100vh;
   position: fixed;
   z-index: 0;
-
 }
 
 .vl1 {
@@ -66,21 +65,22 @@ body {
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  position: absolute;
+  position: fixed;
+  z-index: 0;
 }
 
 .dot1 {
   left: 20%;
   margin-left: -20px;
   top: 16%;
-  background-color: #FC3A52;
+  background-color: #fc3a52;
 }
 
 .dot2 {
   left: 50%;
   margin-left: -20px;
-  top: 35%;
-  background-color: #F6ECDD;
+  top: 30%;
+  background-color: #f6ecdd;
 }
 
 .dot3 {
@@ -111,14 +111,11 @@ body {
 
 .hero-para {
   margin-top: 10px;
-
 }
 
-.hero-para {
+.para {
   font-family: saurabh-book;
   font-size: 23px;
-  margin-top: -13px;
-
 }
 
 .hero-circle {
@@ -127,8 +124,6 @@ body {
   top: 22%;
   display: flex;
   z-index: 0;
-
-
 }
 
 /* Section two 
@@ -141,6 +136,7 @@ gallery with grid and changing image with time and parallax */
   align-items: center;
   align-content: center;
   margin-left: 17%;
+  position: relative;
 }
 
 .home-section-2 {
@@ -156,36 +152,27 @@ gallery with grid and changing image with time and parallax */
     "a b c d e f"
     "g h i j k l"
     "m n o p q r"; */
-
 }
 
-
-
 .home-section-2>.bottom-fit {
-
   align-items: flex-end;
   font-size: 2em;
   color: #ffeead;
   display: flex;
-
 }
 
 .home-section-2>.middle-fit {
-
   align-items: center;
   font-size: 2em;
   color: #ffeead;
   display: flex;
-
 }
 
 .home-section-2>.up-fit {
-
   align-items: baseline;
   font-size: 2em;
   color: #ffeead;
   display: flex;
-
 }
 
 .home-section-2>div>img {
@@ -194,28 +181,25 @@ gallery with grid and changing image with time and parallax */
   object-fit: cover;
 }
 
-/*  */
+/* 
+----Section 3 / Home
+-------------------------- */
 
 .home-section3 {
   display: flex;
   height: 170vh;
   width: 100%;
-  background-color: #F4F4F4;
-
+  background-color: #f4f4f4;
 }
 
 .vertical-text {
-
   transform: rotate(-90deg);
   position: absolute;
   transform-origin: top left;
   bottom: 0;
-  left: 50%;
-  left: 10%;
+  left: 7%;
   text-align: center;
-  color: #FC3A52;
-
-
+  color: #fc3a52;
 }
 
 /* Canvas Artboard ___________________*/
@@ -227,20 +211,39 @@ gallery with grid and changing image with time and parallax */
   position: relative;
   left: 64%;
   transform: translateX(-11.05vh);
-  top: 30%;
-  border-width: .2vh;
-  border-color: #FC3A52;
+  top: 15%;
+  border-width: 0.2vh;
+  border-color: #fc3a52;
   border-style: dashed;
   transition: top 1.5s ease-in-out;
   background-color: white;
-
-
 }
 
+/* Section 3/ Home User Drawing */
 
+.user-drawing-div {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding-top: 10%;
+  left: -7%;
+  flex-wrap: wrap;
+}
 
+.user-drawing {
+  height: 30.8vh;
+  width: 23.1vh;
+  margin: 5px 5px;
+  background-color: white;
+  position: relative;
+}
 
+.artist-you {
+  margin-top: 40px;
+}
 
+/* Text Changing and Animation  
+---------------------------------------------*/
 
 .text-wrapper {
   text-align: left;
@@ -284,8 +287,6 @@ gallery with grid and changing image with time and parallax */
   animation-delay: 15s;
   color: transparent;
 }
-
-
 
 .animated-words span {
   position: absolute;
@@ -331,4 +332,62 @@ gallery with grid and changing image with time and parallax */
   100% {
     opacity: 0;
   }
+}
+
+/* Section 4/ showcase 
+---------------------------*/
+
+.section4-showcase {
+  height: 100vh;
+}
+
+#myVideo {
+  position: relative;
+
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+
+.video-dimension {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.section-4-work {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Section4 Grid Work
+---------------------------------- */
+
+.Section5-work {
+  width: 100%;
+  height: 150vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr, 1fr, 1fr;
+  grid-gap: 10px;
+  align-items: center;
 }

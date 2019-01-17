@@ -17,7 +17,7 @@ body {
   grid-template-rows: auto;
   background-color: white;
   grid-gap: 1px;
-  z-index: 100;
+  z-index: 200;
 }
 
 
