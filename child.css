@@ -12,13 +12,21 @@ body {
 .section2 {
   height: 100vh;
   width: 100vw;
-  display: grid;
-  grid-template-columns: 100px auto;
+  display: flex;
+  /* grid-template-columns: 100px auto;
   grid-template-rows: auto;
   background-color: white;
-  grid-gap: 1px;
+  grid-gap: 1px; */
   z-index: 200;
+  position: fixed;
+
+
+
+
+
 }
+
+
 
 
 .section2>.menublock {
@@ -27,6 +35,12 @@ body {
 
 .menublock {
   top: 40%;
+  width: 100px;
+  height: 100vh;
+  z-index: 200;
+  position: fixed;
+  top: 0%;
+  left: 0%;
 }
 
 /*Hamburger menu button 
@@ -36,6 +50,9 @@ body {
   width: 0%;
   overflow: hidden;
   transition: width 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 20;
+  position: fixed;
+  left: 6%;
 }
 
 .block2-active {
