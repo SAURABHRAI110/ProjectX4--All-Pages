@@ -1,6 +1,9 @@
 /*
 * Design and Code: Saurabh Rai
 */
+html {
+  scroll-behavior: smooth;
+}
 
 html,
 body {
@@ -24,7 +27,7 @@ body {
 }
 
 .home-section-1 {
-  height: 90vh;
+  /* height: 90vh; */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -48,13 +51,13 @@ body {
 }
 
 .vl2 {
-  left: 50%;
+  left: 52%;
   margin-left: -3px;
   top: 0;
 }
 
 .vl3 {
-  left: 80%;
+  left: 83%;
   margin-left: -3px;
   top: 0;
 }
@@ -66,7 +69,7 @@ body {
   border-radius: 50%;
   display: inline-block;
   position: fixed;
-  z-index: 0;
+  /* z-index: 0; */
 }
 
 .dot1 {
@@ -77,14 +80,14 @@ body {
 }
 
 .dot2 {
-  left: 50%;
+  left: 52%;
   margin-left: -20px;
   top: 30%;
   background-color: #f6ecdd;
 }
 
 .dot3 {
-  left: 80%;
+  left: 83%;
   margin-left: -20px;
   top: 3%;
   background-color: #372154;
@@ -131,7 +134,7 @@ gallery with grid and changing image with time and parallax */
 
 .section-2-container {
   display: flex;
-  height: 145vh;
+  /* height: 145vh; */
   width: 70%;
   align-items: center;
   align-content: center;
@@ -190,6 +193,7 @@ gallery with grid and changing image with time and parallax */
   height: 170vh;
   width: 100%;
   background-color: #f4f4f4;
+  z-index: 2;
 }
 
 .vertical-text {
@@ -390,4 +394,49 @@ gallery with grid and changing image with time and parallax */
   grid-template-rows: 1fr, 1fr, 1fr;
   grid-gap: 10px;
   align-items: center;
+}
+
+/* ------------------ */
+.section-6 {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: #372154;
+}
+
+/* Media Queries
+-----------------------------
+------------------------------- */
+
+@media screen and (max-width: 1200px) {
+  .hero-title {
+    font-size: 80px;
+    line-height: 80px;
+  }
+
+  .para {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  .hero-title {
+    font-size: 70px;
+    line-height: 70px;
+  }
+
+  .para {
+    font-size: 18px;
+  }
+
+  .home-section-2 {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .home-section-2 {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
 }

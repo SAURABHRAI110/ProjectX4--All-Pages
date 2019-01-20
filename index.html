@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Home</title>
-  <script src="jquery-3.3.1.min.js"></script>
   <link rel="stylesheet" href="child.css" />
   <link rel="stylesheet" href="home.css" />
 </head>
@@ -38,12 +37,14 @@
             -->
         <div class="boldtext rotate ">Showcase</div>
       </div>
-      <div class="nav-block3">
-        <!--
-              <div class="nav-paragraph white">I walk, I look, I isee, I stop,<br>I photograph, you pay. </div>
-            -->
-        <div class="boldtext rotate "><span>People</span></div>
-      </div>
+      <a class="nav-block3" href="showcase.html">
+        <div>
+          <!--
+                <div class="nav-paragraph white">I walk, I look, I isee, I stop,<br>I photograph, you pay. </div>
+              -->
+          <div class="boldtext rotate "><span>People</span></div>
+        </div>
+      </a>
       <div class="nav-block4">
         <div class="normaltext black center">Blog</div>
       </div>
@@ -131,7 +132,7 @@
 
       </p>
     </div>
-    <div class="canvas-artboard"></div>
+    <div id="drawing-canvas" class="canvas-artboard"></div>
 
 
   </div>
@@ -172,8 +173,12 @@
     <div work-one></div>
     <div work-one></div>
   </div>
+  <div class="section-6"></div>
 
-  <script src="main.js"></script>
+  <!-- <script src="jquery.js"></script> -->
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="bcPaint.js"></script>
+  <script src="easescroll.js"></script>
   <script>
     function openNav() {
       document.getElementById("myNav").style.width = "100%";
@@ -183,6 +188,7 @@
       document.getElementById("myNav").style.width = "0%";
     }
   </script>
+  <script src="main.js"></script>
 </body>
 
 </html>

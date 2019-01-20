@@ -4,6 +4,12 @@ body {
   padding: 0px;
 }
 
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
 @font-face {
   src: url("Font/CircularStd-Medium.otf");
   font-family: Saurabh;

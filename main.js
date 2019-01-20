@@ -1,4 +1,9 @@
+// smooth scroll
+// $("html").easeScroll();
+
 // // menu
+
+// $('#bcPaint').bcPaint();
 
 var menu = $(".wrapper a");
 
@@ -15,13 +20,13 @@ $("#my-menu-button").click(function () {
   $("#my-menu").slideToggle();
 });
 
-$(function () {
-  $("body").mousewheel(function (event, delta) {
-    this.scrollLeft -= delta * 30;
+// $(function () {
+//   $("body").mousewheel(function (event, delta) {
+//     this.scrollLeft -= delta * 30;
 
-    event.preventDefault();
-  });
-});
+//     event.preventDefault();
+//   });
+// });
 
 // //Horizontal Scroll
 // //https://codepen.io/karlovidek/pen/LzgYYd?editors=1010
@@ -240,3 +245,128 @@ $(function () {
 //     return -c * ((t = t / d - 1) * t * t * t - 1) + b;
 //   };
 // })(jQuery);
+
+context = document.getElementById('drawing-canvas').getContext("2d");
+
+// initialize canvas
+$("#drawing-canvas").attr("width", $("#drawing-canvas").width());
+$("#drawing-canvas").attr("height", $("#drawing-canvas").height());
+
+var xPoints = []; // in percentage of canvas width
+var yPoints = []; // in percentage of canvas height
+var draggedOrNot = [];
+var painting;
+var drawingEnabled = true;
+
+// initialize clear button
+$("#clear-button").click(function () {
+  xPoints = [];
+  yPoints = [];
+  draggedOrNot = [];
+  draw();
+});
+
+$("#drawing-canvas").mousedown(function (e) {
+  if (drawingEnabled) {
+    // get initial coordinates
+    var x = e.pageX - $(this).offset().left;
+    var y = e.pageY - $(this).offset().top;
+
+    // convert to percent
+    x = x / $(this).width();
+    y = y / $(this).height();
+
+    // add first point
+    addPoint(x, y, false);
+
+    // they started painting
+    painting = true;
+
+    // draw at the start
+    draw();
+  }
+});
+
+
+
+$('#desktop-interactive-space').mousemove(function (e) {
+
+  if (painting && drawingEnabled) {
+    // get current coordinates relative to the section
+    var x = e.pageX - $(this).offset().left;
+    var y = e.pageY - $(this).offset().top;
+
+    // find canvas coordinates relative to section
+    var xOffset = $("#drawing-canvas").offset().left - $(this).offset().left;
+    var yOffset = $("#drawing-canvas").offset().top - $(this).offset().top;
+
+    x = x - xOffset;
+    y = y - yOffset;
+
+    // convert to percent
+    x = x / $("#drawing-canvas").width();
+    y = y / $("#drawing-canvas").height();
+
+    // add point to array
+    addPoint(x, y, true);
+
+    // redraw
+    draw();
+  }
+
+});
+
+$('#desktop-interactive-space').mouseup(function () {
+  // they stopped
+  painting = false;
+});
+
+
+
+function draw() {
+
+  var width = $('#drawing-canvas').width();
+  var height = $('#drawing-canvas').height();
+
+  context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
+
+  context.strokeStyle = "#3ec7d7";
+  context.lineJoin = "round";
+  context.lineWidth = .015 * width;
+
+  for (var i = 0; i < xPoints.length; i++) {
+    context.beginPath();
+    if (draggedOrNot[i] && i) {
+      context.moveTo(xPoints[i - 1] * width, yPoints[i - 1] * height);
+    } else {
+      context.moveTo(xPoints[i] * width - 1, yPoints[i] * height);
+    }
+
+    context.lineTo(xPoints[i] * width, yPoints[i] * height);
+    context.closePath();
+    context.stroke();
+  }
+
+  // set button state
+  if (drawingEnabled) {
+    if (xPoints.length) {
+      $("#your-drawing").addClass("buttons-visible");
+    } else {
+      $("#your-drawing").removeClass("buttons-visible");
+    }
+  }
+}
+
+function addPoint(x, y, dragging) {
+  xPoints.push(x);
+  yPoints.push(y);
+  draggedOrNot.push(dragging);
+}
+
+
+$(window).resize(function () {
+  $("#drawing-canvas").attr("width", $("#drawing-canvas").width());
+  $("#drawing-canvas").attr("height", $("#drawing-canvas").height());
+
+  draw();
+});
