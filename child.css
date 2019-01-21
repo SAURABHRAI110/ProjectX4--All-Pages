@@ -2,6 +2,7 @@ html,
 body {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 *,
@@ -25,15 +26,7 @@ body {
   grid-gap: 1px; */
   z-index: 200;
   position: fixed;
-
-
-
-
-
 }
-
-
-
 
 .section2>.menublock {
   background-color: white;
@@ -68,8 +61,8 @@ body {
 .wrapper {
   width: 100%;
   height: 100%;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
-
+  background: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 .menu-4 {
@@ -468,8 +461,6 @@ Section 4--------- */
   }
 }
 
-
-
 /* ......................
 Home Section One 
 ........................ */
@@ -481,5 +472,15 @@ Home Section One
   position: absolute;
   z-index: 1;
   top: 0%;
+}
 
+/* Case Study| Project Template */
+
+.casestudy1-section1 {
+  display: flex;
+  height: 120vh;
+  width: 100vw;
+  background-color: #fc3a52;
+  position: absolute;
+  z-index: 0;
 }
