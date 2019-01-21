@@ -11,6 +11,15 @@ body {
   box-sizing: border-box;
 }
 
+/* Colours Pallete*/
+
+:root {
+  --primary-color: #FC3A52;
+  --secondary-color: #1c1b20;
+
+}
+
+
 @font-face {
   src: url("Font/CircularStd-Medium.otf");
   font-family: Saurabh;
@@ -480,7 +489,41 @@ Home Section One
   display: flex;
   height: 120vh;
   width: 100vw;
-  background-color: #fc3a52;
+  position: fixed;
+
+}
+
+.casestudy-hero-background {
+  background: url('projects/casestudy1-1.jpg');
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.casestudy-overlay-layer {
+
+  background-color: var(--primary-color);
+  opacity: .85;
   position: absolute;
-  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120vh;
+
+}
+
+.casestudy1-section2 {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: transparent;
+
+}
+
+.casestudy1-section3 {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: #372154;
+
 }
