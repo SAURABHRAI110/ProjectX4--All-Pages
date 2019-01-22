@@ -3,12 +3,52 @@ body {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  /* margin-left: 100px; */
+}
+
+.black80 {
+  color: black;
+  opacity: .8;
+}
+
+.black70 {
+  color: black;
+  opacity: .7;
+}
+
+.black60 {
+  color: black;
+  opacity: .6;
+}
+
+.black40 {
+  color: black;
+  opacity: .4;
+}
+
+.black20 {
+  color: black;
+  opacity: .2;
+}
+
+.white100 {
+  color: white;
+
 }
 
 *,
 :before,
 :after {
   box-sizing: border-box;
+}
+
+.ml-20 {
+  margin-left: 20%;
+  width: 60%;
+}
+
+p {
+  color: #3C3C3C;
 }
 
 /* Colours Pallete*/
@@ -19,10 +59,20 @@ body {
 
 }
 
+@font-face {
+  src: url("Font/CircularStd-Bold.otf");
+  font-family: saurabh;
+}
+
+@font-face {
+  src: url("Font/CircularStd-Book.otf");
+  font-family: saurabh-book;
+}
+
 
 @font-face {
   src: url("Font/CircularStd-Medium.otf");
-  font-family: Saurabh;
+  font-family: saurabh-medium;
 }
 
 .section2 {
@@ -484,46 +534,196 @@ Home Section One
 }
 
 /* Case Study| Project Template */
+/* -----------------------------------
+------------------------------------
+----------------------------- */
 
-.casestudy1-section1 {
+.casestudy-hero-section {
   display: flex;
   height: 120vh;
   width: 100vw;
-  position: fixed;
 
 }
 
-.casestudy-hero-background {
+/* .casestudy-hero-background {
   background: url('projects/casestudy1-1.jpg');
   position: relative;
   width: 100vw;
   height: 100vh;
-}
+} */
 
 .casestudy-overlay-layer {
 
   background-color: var(--primary-color);
-  opacity: .85;
+  opacity: .8;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 120vh;
+  height: 100vh;
 
 }
 
-.casestudy1-section2 {
-  width: 100vw;
+
+
+.parallax-window {
   height: 100vh;
   position: relative;
-  background-color: transparent;
+}
 
+.line {
+  width: 50px;
+  height: 4px;
+  background: white;
+  border: none;
+  margin-top: -40px;
+  margin-left: 0;
+}
+
+
+.casestudy-vl {
+  border-left: 1px solid #d8d8d8;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+}
+
+.casestudy-vl1 {
+  left: 20%;
+  margin-left: -3px;
+  top: 0;
+}
+
+.casestudy-vl2 {
+  left: 52%;
+  margin-left: -3px;
+  top: 0;
+}
+
+.casestudy-vl3 {
+  left: 83%;
+  margin-left: -3px;
+  top: 0;
+}
+
+
+
+
+.casestudy-title-div {
+
+  margin-left: 20%;
+  margin-top: 12%;
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.casestudy-hero-title {
+  font-family: saurabh;
+  font-size: 95px;
+  position: relative;
+  line-height: 92px;
+  color: white;
+}
+
+.casestudy-outlined {
+  -webkit-text-stroke: 0.6px white;
+  color: transparent;
+}
+
+.casestudy-category {
+  color: white;
+  font-family: saurabh-book;
+
+}
+
+.casestudy-hero-para {
+  color: white;
+  font-family: saurabh-book;
+}
+
+.hero-para {
+  margin-top: 10px;
+}
+
+.para {
+  font-family: saurabh-book;
+  font-size: 23px;
+}
+
+
+
+.casestudy1-section2 {
+  width: 100vw;
+  height: auto;
+  position: relative;
+  background-color: white;
+
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.w-220 {
+  min-width: 300px;
+}
+
+h5 {
+  font-family: saurabh-book;
+  font-size: 19px;
+  margin-bottom: 0px;
+  color: black;
+  opacity: .4;
 }
 
 .casestudy1-section3 {
   width: 100vw;
   height: 100vh;
   position: relative;
-  background-color: #372154;
+  background-color: white;
 
+
+}
+
+.casestudy-info-block {
+  position: absolute;
+  margin-left: 20%;
+  margin-top: 4%;
+  margin-right: 18%;
+  margin-bottom: 4%;
+
+}
+
+.info-block-heading {
+  font-family: saurabh-medium;
+  font-size: 40px;
+}
+
+/* info two part */
+
+.casestudy-info-block-half1 {
+  display: flex;
+  width: 50%;
+  float: left;
+}
+
+.casestudy-info-block-half2 {
+  display: flex;
+  width: 50%;
+  float: right;
+}
+
+
+.section4 {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: #1c1b20;
 }

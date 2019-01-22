@@ -11,6 +11,10 @@ body {
   padding: 0px;
 }
 
+body {
+  /* margin-left: 100px; */
+}
+
 @font-face {
   src: url("Font/CircularStd-Bold.otf");
   font-family: saurabh;
