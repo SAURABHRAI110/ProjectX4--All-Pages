@@ -84,7 +84,7 @@ p {
   position: fixed;
 }
 
-.section2 > .menublock {
+.section2>.menublock {
   background-color: white;
 }
 
@@ -403,7 +403,7 @@ div.showcase-work-block:hover {
   transition: min-width 1s, opacity 1s;
 }
 
-.showcase-container > div > img {
+.showcase-container>div>img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -667,7 +667,8 @@ h5 {
 
 .casestudy1-section3 {
   width: 100vw;
-  height: 72vh;
+  /* height: 72vh; */
+  height: 89vh;
   position: relative;
   background-color: white;
 }
@@ -713,6 +714,7 @@ h5 {
   margin-right: 50%;
   margin-bottom: 4%;
 }
+
 .casestudy-info-block2 {
   position: absolute;
   margin-left: 52%;
@@ -721,8 +723,44 @@ h5 {
   margin-bottom: 4%;
 }
 
+
+
+.quotepara::before {
+  content: '';
+  margin-left: -1%;
+  border-left: 3px solid var(--primary-color);
+  height: 130px;
+  position: absolute;
+}
+
+.quotepara {
+  font-family: saurabh-book;
+  font-size: 28px;
+
+  margin-left: 10px;
+  text-align: center;
+
+}
+
 .section5 {
   width: 100vw;
-  height: 160vh;
+  height: auto;
+  position: relative;
+}
+
+.casestudy-full-size {
+  position: relative;
+  width: 100vw;
+}
+
+.section6 {
+  width: 100vw;
+  height: auto;
+  position: relative;
+}
+
+.research-image {
+  width: 60vw;
+  padding-left: 20%;
   position: relative;
 }
