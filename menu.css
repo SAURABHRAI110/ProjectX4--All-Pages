@@ -492,17 +492,6 @@ html[data-theme=dark] .o-page {
     overflow: hidden
 }
 
-::-moz-selection {
-    background-color: #222325;
-    color: #fff;
-    text-shadow: none
-}
-
-::selection {
-    background-color: #222325;
-    color: #fff;
-    text-shadow: none
-}
 
 .o-link,
 a {
@@ -553,7 +542,7 @@ figure {
     margin: 0
 }
 
-.o-h,
+/* .o-h,
 .o-h1,
 .o-h2,
 .o-h3,
@@ -651,7 +640,7 @@ h6 {
     .o-container {
         max-width: calc(100% - 13.75rem)
     }
-}
+} */
 
 @media (min-width:1200px) and (max-width:1399px) {
     .o-container {
