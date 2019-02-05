@@ -11,6 +11,11 @@ body {
     margin: 0
 }
 
+:root {
+    --primary-color: #fc3a52;
+    --secondary-color: #1c1b20;
+}
+
 article,
 aside,
 footer,
@@ -590,7 +595,7 @@ h1 {
 
 .o-h2,
 h2 {
-    font-size: 6.25rem;
+    font-size: 2.25rem;
     font-weight: 700;
     line-height: 1.1
 }
@@ -2414,7 +2419,8 @@ scrollbar .overscroll-glow {
     bottom: 0;
     left: 0;
     font-size: .75rem;
-    padding: 2.5rem;
+    padding: 29px;
+    opacity: .1;
     padding-right: 1.25rem;
     font-weight: 500;
     opacity: 0;
@@ -2487,8 +2493,9 @@ scrollbar .overscroll-glow {
 
 @media (max-width:1199px) {
     .c-nav_text {
-        padding: .9375rem;
-        padding-right: 10px
+        padding: 29px;
+        padding-right: 10px;
+        opacity: .3;
     }
 }
 
@@ -2892,7 +2899,7 @@ scrollbar .overscroll-glow {
 }
 
 .c-nav_main_item:nth-child(1) .c-nav_main_wrap::before {
-    background-color: #231f20;
+    background-color: var(--secondary-color);
     -webkit-transition-delay: .3s, 0s, 0s;
     transition-delay: .3s, 0s, 0s
 }
@@ -2903,7 +2910,7 @@ scrollbar .overscroll-glow {
 }
 
 .c-nav_main_item:nth-child(2) .c-nav_main_wrap::before {
-    background-color: #ef5959;
+    background-color: var(--primary-color);
     -webkit-transition-delay: .2s, 0s, 0s;
     transition-delay: .2s, 0s, 0s
 }
