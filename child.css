@@ -802,3 +802,22 @@ h5 {
     justify-content: center; */
 
   }
+
+
+  /* Showcase
+  ---------------------------------
+  ------------------------------- */
+
+
+  .showcase-video {
+    display: flex;
+    width: 90vw;
+    height: 90vh;
+
+  }
+
+  .showcase-section2 {
+    height: 100vh;
+    width: 100vw;
+    background-color: #fc3a52;
+  }
