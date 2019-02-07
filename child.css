@@ -14,19 +14,17 @@ body {
   /* margin-left: 100px; */
 }
 
-
 ::-moz-selection {
   background-color: var(--primary-color);
   color: #fff;
-  text-shadow: none
+  text-shadow: none;
 }
 
 ::selection {
   background-color: var(--primary-color);
   color: #fff;
-  text-shadow: none
+  text-shadow: none;
 }
-
 
 .black80 {
   color: black;
@@ -95,7 +93,6 @@ p {
   font-family: saurabh-medium;
 }
 
-
 .white {
   color: #ffffff;
 }
@@ -109,19 +106,17 @@ body {
   font-family: Saurabh;
 }
 
-
 /* ---------------------------------------------------------------------------
 Home Page
 ------------------------------------------------------------------------------ */
 
-
-
 .home-section-1 {
-  height: 100vh;
+  height: auto;
   width: 100%;
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: absolute;
+  top: 0%;
 }
 
 /* Vertical Line */
@@ -185,7 +180,7 @@ Home Page
 .hero-title-div {
   position: absolute;
   margin-left: 20%;
-  margin-top: 12%;
+  margin-top: 8%;
 }
 
 .hero-title {
@@ -202,7 +197,7 @@ Home Page
 }
 
 .hero-para {
-  margin-top: 10px;
+  margin-top: -20px;
 }
 
 .para {
@@ -246,28 +241,28 @@ gallery with grid and changing image with time and parallax */
     "m n o p q r"; */
 }
 
-.home-section-2>.bottom-fit {
+.home-section-2 > .bottom-fit {
   align-items: flex-end;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2>.middle-fit {
+.home-section-2 > .middle-fit {
   align-items: center;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2>.up-fit {
+.home-section-2 > .up-fit {
   align-items: baseline;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2>div>img {
+.home-section-2 > div > img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -430,8 +425,6 @@ gallery with grid and changing image with time and parallax */
 /* Section 4/ showcase 
 ---------------------------*/
 
-
-
 .section-4-work {
   height: 90vh;
   width: 100%;
@@ -443,22 +436,12 @@ gallery with grid and changing image with time and parallax */
 /* Section4 Grid Work
 ---------------------------------- */
 
-.Section5-work {
-  width: 100%;
-  height: 150vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr, 1fr, 1fr;
-  grid-gap: 10px;
-  align-items: center;
-}
-
-/* ------------------ */
-.section-6 {
-  display: flex;
+.section5-work {
   width: 100vw;
-  height: 100vh;
-  background-color: #372154;
+  align-items: center;
+  align-content: center;
+
+  z-index: 2;
 }
 
 /* Media Queries
@@ -477,7 +460,6 @@ gallery with grid and changing image with time and parallax */
 }
 
 @media screen and (max-width: 800px) {
-
   .hero-title {
     font-size: 70px;
     line-height: 70px;
@@ -748,14 +730,11 @@ h5 {
 }
 
 .research-photos-grid {
-
   display: grid;
   grid-gap: 30px;
   /* grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-auto-rows: auto; */
   grid-auto-flow: dense;
-
-
 }
 
 .research-div-wrapper {
@@ -769,55 +748,91 @@ h5 {
   z-index: 1;
 }
 
-
-
-.research-photos-grid>div>img {
+.research-photos-grid > div > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.research-photos-grid>.big {
+.research-photos-grid > .big {
   grid-column: span 2;
+}
 
+/* section8  */
 
-
-  /* section8  */
-
-  .section8 {
-    dia
-  }
-
-
-
-  /* Casestude Video Vimeo Video */
-  .casestudy-video {
-    /* width: 70vw;
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center; */
-
-  }
-
-
-  /* Showcase
+/* Showcase
   ---------------------------------
   ------------------------------- */
 
+.showcase-video {
+  width: 100%;
+  height: 98vh;
+}
 
-  .showcase-video {
-    display: flex;
-    width: 90vw;
-    height: 90vh;
+/* case study div */
 
-  }
+.showcase-section2 {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(auto-fit, minmax(350px, 1fr);
+  grid-gap: 10px; */
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  background-color: #f4f4f4;
+  z-index: 1;
+  flex-direction: column;
+  padding: 17px 0px 17px 0px;
+}
+.showcase-div {
+  width: 67%;
+  height: 57vh;
+  margin-left: 18%;
+  background-color: white;
+  display: flex;
+  position: relative;
+  transition: box-shadow 0.45s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0, 1);
+}
 
-  .showcase-section2 {
-    height: 100vh;
-    width: 100vw;
-    background-color: #fc3a52;
-  }
+.dynamic-width {
+  height: 72%;
+  width: 39%;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  left: 25.5%;
+  transform: translate(-50%, -50%);
+  transition: width 0.45s, margin-left 0.45s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0, 1);
+}
+
+.showcase-div:hover > .dynamic-width {
+  width: calc(60% - 12%);
+  margin-left: 13%;
+}
+.showcase-div:hover {
+  /* cursor: pointer; */
+  box-shadow: rgba(0, 0, 0, 0.1) 2px 2px 4px 0px;
+}
+
+.showcase-png {
+  position: absolute;
+  width: 54%;
+  height: 31%;
+  padding-left: 6%;
+  padding-top: 4%;
+}
+
+.showcase-title {
+  font-family: saurabh;
+  font-size: 95px;
+  position: relative;
+  line-height: 64px;
+
+  position: absolute;
+  top: 0;
+  left: 92%;
+  color: #595959;
+}
