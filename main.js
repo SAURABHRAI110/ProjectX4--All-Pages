@@ -1,6 +1,10 @@
 // smooth scroll
 // $("html").easeScroll();
+///aos scrolling animation
 
+AOS.init();
+
+// $('#bcPaint').bcPaint();
 // // menu
 // Blog Filter
 
@@ -50,11 +54,7 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
-///aos scrolling animation
 
-AOS.init();
-
-// $('#bcPaint').bcPaint();
 
 var menu = $(".wrapper a");
 

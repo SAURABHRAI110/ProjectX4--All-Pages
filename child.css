@@ -1024,7 +1024,7 @@ Sorting and shuffling */
   font-size: 12px;
 
   cursor: pointer;
-  transition: background-color c 0.25s ease;
+  transition: background-color 0.25s ease-in-out;
 }
 
 .btn:hover {
@@ -1063,7 +1063,7 @@ Sorting and shuffling */
 .article-container {
   width: 80%;
   margin-left: 13%;
-  height: 46vh;
+  min-height: 46vh;
   display: none;
   position: relative;
 }
@@ -1078,7 +1078,7 @@ Sorting and shuffling */
 
 .article-category {
   margin-left: 5%;
-  padding-top: 6%;
+  padding-top: 4%;
   font-family: saurabh-book;
   font-size: 20px;
   position: absolute;
@@ -1086,7 +1086,8 @@ Sorting and shuffling */
 
 .article-text-container {
   margin-left: 20%;
-  padding-top: 6%;
+  padding-top: 4%;
+  padding-bottom: 3%;
 }
 
 .article-date {
@@ -1096,17 +1097,22 @@ Sorting and shuffling */
 }
 
 .article-heading {
-  font-family: saurabh-book;
-  font-size: 30px;
+  font-family: saurabh;
+  font-size: 32px;
   position: relative;
   width: 65%;
   padding-top: 1.4%;
 }
-
+.article-para {
+  position: relative;
+  width: 65%;
+  font-family: saurabh-book;
+}
 .article-pic {
   width: 230px;
   right: 3%;
-  top: 15%;
+  top: 50%;
+  transform: translateY(-50%);
   height: 230px;
   display: flex;
   position: absolute;
@@ -1124,7 +1130,7 @@ Sorting and shuffling */
   color: var(--primary-color);
   cursor: pointer;
   margin-top: 1%;
-  position: absolute;
+  position: relative;
 }
 
 @media (max-width: 999px) {
@@ -1143,5 +1149,11 @@ Sorting and shuffling */
   .hero-title-div {
     margin-left: 10%;
     margin-top: 8%;
+  }
+
+  .article-pic {
+    width: 190px;
+    right: 3%;
+    height: 190px;
   }
 }
