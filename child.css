@@ -219,7 +219,6 @@ Home Page
   margin-top: 11%;
   z-index: 0;
   width: 23%;
-
 }
 
 .nametag1 {
@@ -270,9 +269,8 @@ Home Page
   width: 100%;
   height: 1px;
   background: rgb(231, 3, 3);
-  content: ""
+  content: "";
 }
-
 
 @media (max-width: 999px) {
   .home-section-1 {
@@ -308,28 +306,28 @@ gallery with grid and changing image with time and parallax */
     "m n o p q r"; */
 }
 
-.home-section-2>.bottom-fit {
+.home-section-2 > .bottom-fit {
   align-items: flex-end;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2>.middle-fit {
+.home-section-2 > .middle-fit {
   align-items: center;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2>.up-fit {
+.home-section-2 > .up-fit {
   align-items: baseline;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2>div>img {
+.home-section-2 > div > img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -815,13 +813,13 @@ h5 {
   z-index: 1;
 }
 
-.research-photos-grid>div>img {
+.research-photos-grid > div > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.research-photos-grid>.big {
+.research-photos-grid > .big {
   grid-column: span 2;
 }
 
@@ -969,7 +967,8 @@ h5 {
   height: 100%;
 }
 
-.hover-color:hover {}
+.hover-color:hover {
+}
 
 .secondary-content {
   position: absolute;
@@ -998,7 +997,6 @@ h5 {
   }
 }
 
-
 /* Blog
 ---------------------------
 --------------------
@@ -1008,12 +1006,43 @@ h5 {
   width: 100vw;
   height: 100vh;
   background-color: white;
-
 }
 
+/* Blog Section 2
+Sorting and shuffling */
+.btn {
+  outline: none;
+  height: 40px;
+  text-align: center;
+  width: 130px;
+  border-radius: 3px;
+  background: #fff;
+  border: 0.5px solid #707070;
+  color: #707070;
+  letter-spacing: 1px;
+  text-shadow: 0;
+  font-size: 12px;
+
+  cursor: pointer;
+  transition: background-color c 0.25s ease;
+}
+
+.btn:hover {
+  background-color: #555555;
+  color: white;
+}
+
+.btn.active {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.margin-btn {
+  margin-right: 20px;
+}
 .blog-section2 {
   width: 100%;
-  background-color: #F6ECDD;
   height: auto;
 }
 
@@ -1035,10 +1064,12 @@ h5 {
   width: 80%;
   margin-left: 13%;
   height: 46vh;
-
+  display: none;
   position: relative;
 }
-
+.show {
+  display: block;
+}
 .hl {
   border-top: 1px solid #797979;
   position: absolute;
@@ -1051,13 +1082,11 @@ h5 {
   font-family: saurabh-book;
   font-size: 20px;
   position: absolute;
-
 }
 
 .article-text-container {
   margin-left: 20%;
   padding-top: 6%;
-
 }
 
 .article-date {
