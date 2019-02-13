@@ -185,6 +185,7 @@ Home Page
   position: absolute;
   margin-left: 20%;
   margin-top: 8%;
+  margin-right: 18%;
 }
 
 .hero-title {
@@ -1044,6 +1045,8 @@ Sorting and shuffling */
 .blog-section2 {
   width: 100%;
   height: auto;
+  background-color: white;
+  position: relative;
 }
 
 .blog-filter {
@@ -1066,7 +1069,9 @@ Sorting and shuffling */
   min-height: 46vh;
   display: none;
   position: relative;
+  background-color: white;
 }
+
 .show {
   display: block;
 }
