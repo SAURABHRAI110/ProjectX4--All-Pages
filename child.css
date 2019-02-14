@@ -1162,3 +1162,41 @@ Sorting and shuffling */
     height: 190px;
   }
 }
+
+/*  same word slide in */
+.hover-link a {
+  position: relative;
+  display: inline-block;
+  outline: none;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.link-effect a {
+  overflow: hidden;
+  padding: 0 4px;
+  height: 1em;
+}
+
+.link-effect a span {
+  position: relative;
+  display: inline-block;
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0, 1);
+}
+
+.link-effect a span::before {
+  content: attr(data-hover);
+  position: absolute;
+  top: 100%;
+  color: var(--primary-color);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.link-effect a:hover span {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
