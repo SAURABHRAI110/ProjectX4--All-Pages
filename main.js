@@ -1,3 +1,8 @@
+// aos scroll Animation
+//https://github.com/michalsnik/aos
+
+AOS.init();
+
 // Blog Hero section
 // Wave Lines
 //motivation
@@ -470,9 +475,6 @@ var waves = new Waves('#holder', {
 waves.animate();
 //hjh
 
-$("#my-menu-button").click(function () {
-  $("#my-menu").slideToggle();
-});
 
 // $(function () {
 //   $("body").mousewheel(function (event, delta) {
