@@ -1,3 +1,7 @@
+// $(document).ready(function () {
+//   $('.img-responsive').remove();
+// });
+
 // aos scroll Animation
 //https://github.com/michalsnik/aos
 
@@ -14,7 +18,7 @@ var $ = c.getContext("2d");
 var w = (c.width = window.innerWidth);
 var h = (c.height = window.innerHeight);
 
-var intLines = 10;
+var intLines = 15;
 var draw = function (a, b, t) {
   $.lineWidth = 0.2;
   //background color
@@ -45,19 +49,19 @@ var run = function () {
   //window.requestAnimationFrame(run);
   t += 0.5;
   draw(33, 52 * Math.sin(t / 2400), t);
-  txt();
+  // txt();
 };
 
 //basic UI
-function changeLines() {
-  var L = document.getElementById("lineCount").value;
-  intLines = L;
-  //console.log("test");
-}
-document.getElementById("lineCount").value = intLines;
-document.getElementById("lineCount").onchange = function () {
-  changeLines();
-};
+// function changeLines() {
+//   var L = document.getElementById("lineCount").value;
+//   intLines = L;
+//   //console.log("test");
+// }
+// document.getElementById("lineCount").value = intLines;
+// document.getElementById("lineCount").onchange = function () {
+//   changeLines();
+// };
 
 window.setInterval(run, 50); //interval instead of using callback in run() function
 //run();
@@ -110,25 +114,28 @@ function w3RemoveClass(element, name) {
 
 
 // Add active class to the current button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function () {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
+var blogButton = document.getElementById('myBtnContainer');
+if (blogButton) {
+  var btnContainer = document.getElementById("myBtnContainer");
+  var btns = btnContainer.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function () {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
 }
 
 
-var menu = $(".wrapper a");
+// var menu = $(".wrapper a");
 
-menu.on("click", function () {
-  var menuNum = $(this).data("menu");
-  $(this).toggleClass("menu-" + menuNum + "-active");
-  $(".block2").toggleClass("block2-active");
-  $(".block2").fadeIn(200);
-});
+// menu.on("click", function () {
+//   var menuNum = $(this).data("menu");
+//   $(this).toggleClass("menu-" + menuNum + "-active");
+//   $(".block2").toggleClass("block2-active");
+//   $(".block2").fadeIn(200);
+// });
 
 (function () {
 
