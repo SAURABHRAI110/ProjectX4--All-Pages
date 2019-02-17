@@ -2,9 +2,8 @@
 * Design and Code: Saurabh Rai
 */
 
-/* html {
-  scroll-behavior: smooth;
-} */
+
+
 
 html,
 body {
@@ -319,28 +318,28 @@ gallery with grid and changing image with time and parallax */
     "m n o p q r"; */
 }
 
-.home-section-2 > .bottom-fit {
+.home-section-2>.bottom-fit {
   align-items: flex-end;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2 > .middle-fit {
+.home-section-2>.middle-fit {
   align-items: center;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2 > .up-fit {
+.home-section-2>.up-fit {
   align-items: baseline;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2 > div > img {
+.home-section-2>div>img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -639,6 +638,7 @@ gallery with grid and changing image with time and parallax */
   position: absolute;
   z-index: 2;
   overflow: hidden;
+  margin-right: 17%;
 }
 
 .casestudy-hero-title {
@@ -821,13 +821,13 @@ h5 {
   z-index: 1;
 }
 
-.research-photos-grid > div > img {
+.research-photos-grid>div>img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.research-photos-grid > .big {
+.research-photos-grid>.big {
   grid-column: span 2;
 }
 
@@ -1314,6 +1314,7 @@ Sorting and shuffling */
  ------------------------------------
  ----------------------------------
  */
+
 .about-para-div {
   margin-left: 0%;
   margin-top: 4%;
@@ -1381,7 +1382,7 @@ Sorting and shuffling */
   z-index: 2;
 } */
 
-.watch-showreel > p {
+.watch-showreel>p {
   font-family: saurabh-book;
   font-size: 24px;
   position: absolute;
@@ -1463,7 +1464,7 @@ Sorting and shuffling */
   right: 0%;
 }
 
-.showreel-tiny-image > img {
+.showreel-tiny-image>img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1542,4 +1543,10 @@ Sorting and shuffling */
 
 .powered-by img {
   display: none;
+}
+
+.lightwidget {
+  display: flex;
+  flex-wrap: wrap;
+
 }

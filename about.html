@@ -120,8 +120,6 @@
   <div class="home-section-1 ">
 
     <div class="background-lines">
-      <!-- <input id="lineCount" type="text" value="" size="3"></input> -->
-      </p>
       <canvas id='canv'></canvas>
     </div>
     <div class="hero-title-div">
@@ -156,7 +154,7 @@
           Watch the <span style="color:#fc3a52;">Showreel.</span>
         </p>
       </div>
-      <div class="watch-showreel">
+      <div class="watch-showreel " data-aos="fade-up" data-aos-duration="2500" data-aos-delay="1800">
         <div class="hl hl-control2"></div>
         <!-- <div class="about-vl"></div> -->
 
@@ -181,18 +179,19 @@
   <div class="about-blank-section1"></div>
   <div class="about-section2">
     <div class="me-images">
-      <div class="me-image1">
+      <div class="me-image1 rellax" data-rellax-speed="-1.2" data-rellax-percentage="0.4">
         <img src="images/about/about-me-1.png">
       </div>
-      <div class="me-image2">
+      <div class="me-image2 rellax" data-rellax-speed="1" data-rellax-percentage="0.4">
         <img src="images/about/about-me-2.png">
       </div>
-      <div class="me-image3">
-        <img src="images/about/about-me-3.png">
-      </div>
-      <div class="me-image4">
+      <div class="me-image4 rellax" data-rellax-speed="-2" data-rellax-percentage="0.7">
         <img src="images/about/about-me-4.png">
       </div>
+      <div class="me-image3 rellax" data-rellax-speed="3" data-rellax-percentage="0.5">
+        <img src="images/about/about-me-3.png">
+      </div>
+
     </div>
   </div>
 
@@ -202,26 +201,44 @@
         Hello there!
       </h2>
       <p class="para hero-para black70">
-        But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I
-        will give you a complete account of the system, and expound the actual teachings of the great explorer of the
-        truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it
-        is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that
-        are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself,
-        because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some
-        great
+        Yo! I'm Saurabh Rai and I am currently a User experience designer at Feeding Trends and Elevito
+        in Lucknow, India.
+        I consider myself a multi-disciplinary designer as I love making anything, but have recently found a passion in
+        creating thoughtful and enjoyable user experiences through product design.
 
       </p>
-      <p class="para hero-para black70">pleasure. To take a trivial example, which of us ever undertakes laborious
-        physical exercise,
-        except to obtain
-        some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has
-        no annoying consequences, or one who avoids a pain that produces no resultant pleasure? On the other hand, we
-        denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of
-        pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to
-        ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as
-        saying through shrinking from toil and pain.
-        But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I
-        will give you a complete account of the system, and expound the actual.</p>
+      <p class="para hero-para black70">I moved on to study Engineering at Babu Banarasi Das Universiy, Lucknow, and
+        began to grow myskills. Making flyers for college community and friends. Doing logos and branding work for
+        friends and word of mouth clients. Going to college during the day and cranking on design work at night.
+        Engieering led me to development and my passion for design led me to what I am today. I am basically a self
+        taught.
+      </p>
+      <p class="para hero-para black70">My first “real” gig was interning at a organisation in Lucknow called Lucknow
+        Literature Festival. It’s there I learned to grind…like REALLY crank out work and do it with some quality. We
+        worked with brands like Nintendo, Pepsi, and StateFarm to name a few. I helped with a lot of the print and
+        marketing collateral, but also was able to work on projects for physical experiential events. I taught myself
+        SketchUp (a 3D rendering software) and would help my creative director make physical event spaces so that our
+        clients could visualize the experience.
+      </p>
+      <p class="para hero-para black70">After 4 years of that, I moved on to my second gig at a startup called
+        Fullscreen. I worked on branding, marketing collateral, presentation decks for the head honcho, animated & cut
+        videos for sizzles, and eventually landed a product design role with the product team. We made dashboard
+        products for our video creators, and eventually went on to creating a rad subscription video streaming
+        platform. Think: Netflix for millennials. The company is now at around 750 employees and disrupting the digital
+        media space.
+      </p>
+      <p class="para hero-para black70">I finally got the urge to head up to Silicon Valley and get my feet wet in the
+        scene up here. I landed a spot at the professional networking platform, LinkedIn. Where I worked on various
+        enterprise products for our paying members. In October of 2018 I made the move to Lyft where I am working on
+        the future of transportation with incredibly smart and talented people. I am passionate about electric and
+        autonomous vehicles and am optimistic about a future where we build our cities for people rather than for cars.
+      </p>
+      <p class="para hero-para black70">I love what I do. The combination of business goals, mixed with human
+        necessity, mixed with solid design is what gets me going every day.
+
+        Don't hesitate to reach out if you'd like to chat about design, life, or just have a good ol' fashioned
+        conversation.
+      </p>
       <h2 class="info-block-heading primary-color">
         Letest Happening
       </h2>
@@ -246,8 +263,12 @@
   <script src="bcPaint.js"></script>
   <script src="easescroll.js"></script>
   <script src="parallax.min.js"></script>
+  <script src="rellax.js"></script>
   <script src="vendorsec92.js"></script>
   <script src="appec92.js"></script>
+  <script>
+    var rellax = new Rellax('.rellax');
+  </script>
   <script src="main.js"></script>
 </body>
 

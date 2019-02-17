@@ -1,56 +1,60 @@
-// $(document).ready(function () {
-//   $('.img-responsive').remove();
-// });
+//Wave Background
+//motivation
+//https://codepen.io/DirkTester/pen/BJLgEx?editors=1010
+
+
+if (document.getElementById("canv")) {
+  var c = document.getElementById("canv");
+  var $ = c.getContext("2d");
+
+  var w = (c.width = window.innerWidth);
+  var h = (c.height = window.innerHeight);
+
+  var intLines = 15;
+  var draw = function (a, b, t) {
+    $.lineWidth = 0.2;
+    //background color
+    $.fillStyle = "white";
+    $.fillRect(0, 0, w, h);
+    //i sets the number of lines
+    for (var i = 0; i < intLines; i++) {
+      $.strokeStyle = "#B1B1B1";
+      $.beginPath();
+      $.moveTo(-0, h / 2);
+      for (var j = 0; j < w; j += 10) {
+        $.lineTo(
+          60 * Math.sin(i / 7) + j + 0.008 * j * j,
+          Math.floor(
+            h / 1.9 +
+            j / 2 * Math.sin(j / 50 - t / 50 - i / 118) +
+            i * 0.9 * Math.sin(j / 25 - (i + t) / 65)
+          )
+        );
+      }
+      $.stroke();
+    }
+  };
+
+  var t = 0;
+  var run = function () {
+    //note the self-calling function via callback window.requestAnimationFrame
+    //window.requestAnimationFrame(run);
+    t += 0.5;
+    draw(33, 52 * Math.sin(t / 2400), t);
+    // txt();
+  };
+}
+
+
 
 // aos scroll Animation
 //https://github.com/michalsnik/aos
 
 AOS.init();
 
-// Blog Hero section
-// Wave Lines
-//motivation
-//https://codepen.io/DirkTester/pen/BJLgEx?editors=1010
 
-var c = document.getElementById("canv");
-var $ = c.getContext("2d");
 
-var w = (c.width = window.innerWidth);
-var h = (c.height = window.innerHeight);
 
-var intLines = 15;
-var draw = function (a, b, t) {
-  $.lineWidth = 0.2;
-  //background color
-  $.fillStyle = "white";
-  $.fillRect(0, 0, w, h);
-  //i sets the number of lines
-  for (var i = 0; i < intLines; i++) {
-    $.strokeStyle = "#B1B1B1";
-    $.beginPath();
-    $.moveTo(-0, h / 2);
-    for (var j = 0; j < w; j += 10) {
-      $.lineTo(
-        60 * Math.sin(i / 7) + j + 0.008 * j * j,
-        Math.floor(
-          h / 1.9 +
-          j / 2 * Math.sin(j / 50 - t / 50 - i / 118) +
-          i * 0.9 * Math.sin(j / 25 - (i + t) / 65)
-        )
-      );
-    }
-    $.stroke();
-  }
-};
-
-var t = 0;
-var run = function () {
-  //note the self-calling function via callback window.requestAnimationFrame
-  //window.requestAnimationFrame(run);
-  t += 0.5;
-  draw(33, 52 * Math.sin(t / 2400), t);
-  // txt();
-};
 
 //basic UI
 // function changeLines() {
@@ -73,49 +77,48 @@ window.setInterval(run, 50); //interval instead of using callback in run() funct
 
 AOS.init();
 
-// $('#bcPaint').bcPaint();
-// // menu
+
+
 // Blog Filter
 
-filterSelection("all")
+if (document.getElementById("myBtnContainer")) {
+  filterSelection("all")
 
-function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("article-container");
-  if (c == "all") c = "";
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-  }
-}
-
-function w3AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {
-      element.className += " " + arr2[i];
+  function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("article-container");
+    if (c == "all") c = "";
+    for (i = 0; i < x.length; i++) {
+      w3RemoveClass(x[i], "show");
+      if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
     }
   }
-}
 
-function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
+  function w3AddClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      if (arr1.indexOf(arr2[i]) == -1) {
+        element.className += " " + arr2[i];
+      }
     }
   }
-  element.className = arr1.join(" ");
-}
+
+  function w3RemoveClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      while (arr1.indexOf(arr2[i]) > -1) {
+        arr1.splice(arr1.indexOf(arr2[i]), 1);
+      }
+    }
+    element.className = arr1.join(" ");
+  }
 
 
-// Add active class to the current button (highlight it)
-var blogButton = document.getElementById('myBtnContainer');
-if (blogButton) {
+  // Add active class to the current button (highlight it)
   var btnContainer = document.getElementById("myBtnContainer");
   var btns = btnContainer.getElementsByClassName("btn");
   for (var i = 0; i < btns.length; i++) {
@@ -473,13 +476,18 @@ if (blogButton) {
 
 })();
 
-var waves = new Waves('#holder', {
-  fps: true,
-  waves: 3,
-  width: 200,
-});
+// var waves = new Waves('#holder', {
+//   fps: true,
+//   waves: 3,
+//   width: 200,
+// });
 
-waves.animate();
+// waves.animate();
+
+
+//
+
+
 //hjh
 
 
@@ -709,127 +717,127 @@ waves.animate();
 //   };
 // })(jQuery);
 
-context = document.getElementById('drawing-canvas').getContext("2d");
+// context = document.getElementById('drawing-canvas').getContext("2d");
 
 // initialize canvas
-$("#drawing-canvas").attr("width", $("#drawing-canvas").width());
-$("#drawing-canvas").attr("height", $("#drawing-canvas").height());
+// $("#drawing-canvas").attr("width", $("#drawing-canvas").width());
+// $("#drawing-canvas").attr("height", $("#drawing-canvas").height());
 
-var xPoints = []; // in percentage of canvas width
-var yPoints = []; // in percentage of canvas height
-var draggedOrNot = [];
-var painting;
-var drawingEnabled = true;
+// var xPoints = []; // in percentage of canvas width
+// var yPoints = []; // in percentage of canvas height
+// var draggedOrNot = [];
+// var painting;
+// var drawingEnabled = true;
 
-// initialize clear button
-$("#clear-button").click(function () {
-  xPoints = [];
-  yPoints = [];
-  draggedOrNot = [];
-  draw();
-});
+// // initialize clear button
+// $("#clear-button").click(function () {
+//   xPoints = [];
+//   yPoints = [];
+//   draggedOrNot = [];
+//   draw();
+// });
 
-$("#drawing-canvas").mousedown(function (e) {
-  if (drawingEnabled) {
-    // get initial coordinates
-    var x = e.pageX - $(this).offset().left;
-    var y = e.pageY - $(this).offset().top;
+// $("#drawing-canvas").mousedown(function (e) {
+//   if (drawingEnabled) {
+//     // get initial coordinates
+//     var x = e.pageX - $(this).offset().left;
+//     var y = e.pageY - $(this).offset().top;
 
-    // convert to percent
-    x = x / $(this).width();
-    y = y / $(this).height();
+//     // convert to percent
+//     x = x / $(this).width();
+//     y = y / $(this).height();
 
-    // add first point
-    addPoint(x, y, false);
+//     // add first point
+//     addPoint(x, y, false);
 
-    // they started painting
-    painting = true;
+//     // they started painting
+//     painting = true;
 
-    // draw at the start
-    draw();
-  }
-});
-
-
-
-$('#desktop-interactive-space').mousemove(function (e) {
-
-  if (painting && drawingEnabled) {
-    // get current coordinates relative to the section
-    var x = e.pageX - $(this).offset().left;
-    var y = e.pageY - $(this).offset().top;
-
-    // find canvas coordinates relative to section
-    var xOffset = $("#drawing-canvas").offset().left - $(this).offset().left;
-    var yOffset = $("#drawing-canvas").offset().top - $(this).offset().top;
-
-    x = x - xOffset;
-    y = y - yOffset;
-
-    // convert to percent
-    x = x / $("#drawing-canvas").width();
-    y = y / $("#drawing-canvas").height();
-
-    // add point to array
-    addPoint(x, y, true);
-
-    // redraw
-    draw();
-  }
-
-});
-
-$('#desktop-interactive-space').mouseup(function () {
-  // they stopped
-  painting = false;
-});
+//     // draw at the start
+//     draw();
+//   }
+// });
 
 
 
-function draw() {
+// $('#desktop-interactive-space').mousemove(function (e) {
 
-  var width = $('#drawing-canvas').width();
-  var height = $('#drawing-canvas').height();
+//   if (painting && drawingEnabled) {
+//     // get current coordinates relative to the section
+//     var x = e.pageX - $(this).offset().left;
+//     var y = e.pageY - $(this).offset().top;
 
-  context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
+//     // find canvas coordinates relative to section
+//     var xOffset = $("#drawing-canvas").offset().left - $(this).offset().left;
+//     var yOffset = $("#drawing-canvas").offset().top - $(this).offset().top;
 
-  context.strokeStyle = "#3ec7d7";
-  context.lineJoin = "round";
-  context.lineWidth = .015 * width;
+//     x = x - xOffset;
+//     y = y - yOffset;
 
-  for (var i = 0; i < xPoints.length; i++) {
-    context.beginPath();
-    if (draggedOrNot[i] && i) {
-      context.moveTo(xPoints[i - 1] * width, yPoints[i - 1] * height);
-    } else {
-      context.moveTo(xPoints[i] * width - 1, yPoints[i] * height);
-    }
+//     // convert to percent
+//     x = x / $("#drawing-canvas").width();
+//     y = y / $("#drawing-canvas").height();
 
-    context.lineTo(xPoints[i] * width, yPoints[i] * height);
-    context.closePath();
-    context.stroke();
-  }
+//     // add point to array
+//     addPoint(x, y, true);
 
-  // set button state
-  if (drawingEnabled) {
-    if (xPoints.length) {
-      $("#your-drawing").addClass("buttons-visible");
-    } else {
-      $("#your-drawing").removeClass("buttons-visible");
-    }
-  }
-}
+//     // redraw
+//     draw();
+//   }
 
-function addPoint(x, y, dragging) {
-  xPoints.push(x);
-  yPoints.push(y);
-  draggedOrNot.push(dragging);
-}
+// });
+
+// $('#desktop-interactive-space').mouseup(function () {
+//   // they stopped
+//   painting = false;
+// });
 
 
-$(window).resize(function () {
-  $("#drawing-canvas").attr("width", $("#drawing-canvas").width());
-  $("#drawing-canvas").attr("height", $("#drawing-canvas").height());
 
-  draw();
-});
+// function draw() {
+
+//   var width = $('#drawing-canvas').width();
+//   var height = $('#drawing-canvas').height();
+
+//   context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
+
+//   context.strokeStyle = "#3ec7d7";
+//   context.lineJoin = "round";
+//   context.lineWidth = .015 * width;
+
+//   for (var i = 0; i < xPoints.length; i++) {
+//     context.beginPath();
+//     if (draggedOrNot[i] && i) {
+//       context.moveTo(xPoints[i - 1] * width, yPoints[i - 1] * height);
+//     } else {
+//       context.moveTo(xPoints[i] * width - 1, yPoints[i] * height);
+//     }
+
+//     context.lineTo(xPoints[i] * width, yPoints[i] * height);
+//     context.closePath();
+//     context.stroke();
+//   }
+
+//   // set button state
+//   if (drawingEnabled) {
+//     if (xPoints.length) {
+//       $("#your-drawing").addClass("buttons-visible");
+//     } else {
+//       $("#your-drawing").removeClass("buttons-visible");
+//     }
+//   }
+// }
+
+// function addPoint(x, y, dragging) {
+//   xPoints.push(x);
+//   yPoints.push(y);
+//   draggedOrNot.push(dragging);
+// }
+
+
+// $(window).resize(function () {
+//   $("#drawing-canvas").attr("width", $("#drawing-canvas").width());
+//   $("#drawing-canvas").attr("height", $("#drawing-canvas").height());
+
+//   draw();
+// });
