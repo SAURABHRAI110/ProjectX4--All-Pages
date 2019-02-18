@@ -2,15 +2,24 @@
 * Design and Code: Saurabh Rai
 */
 
-
-
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
 
 html,
 body {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  /* margin-left: 100px; */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 ::-moz-selection {
@@ -118,7 +127,7 @@ Home Page
 ------------------------------------------------------------------------------ */
 
 .home-section-1 {
-  height: auto;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -222,7 +231,8 @@ Home Page
 
 .para {
   font-family: saurabh-book;
-  font-size: 25px;
+  font-size: 27px;
+  line-height: 25px;
 }
 
 .hero-circle {
@@ -318,28 +328,28 @@ gallery with grid and changing image with time and parallax */
     "m n o p q r"; */
 }
 
-.home-section-2>.bottom-fit {
+.home-section-2 > .bottom-fit {
   align-items: flex-end;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2>.middle-fit {
+.home-section-2 > .middle-fit {
   align-items: center;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2>.up-fit {
+.home-section-2 > .up-fit {
   align-items: baseline;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2>div>img {
+.home-section-2 > div > img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -503,7 +513,7 @@ gallery with grid and changing image with time and parallax */
 ---------------------------*/
 
 .section-4-work {
-  height: 90vh;
+  height: auto;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -555,6 +565,111 @@ gallery with grid and changing image with time and parallax */
   .home-section-2 {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
+}
+
+/* Discover more button */
+
+.discover-more {
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+}
+
+.discover-button-container {
+  width: 200px;
+  height: 80px;
+
+  position: absolute;
+  cursor: pointer;
+}
+
+.discover {
+  width: 70px;
+  height: 70px;
+  background-color: bisque;
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  margin-left: 0%;
+  transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.discover-text {
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  left: 10%;
+  transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  font-family: saurabh;
+  font-size: 25px;
+}
+
+.discover-button-container:hover > .discover {
+  background-color: bisque;
+  margin-left: 70%;
+}
+
+.discover-text::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 2px;
+  background-color: #2b1e31;
+  right: 170px;
+  transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  text-align: right;
+}
+
+.discover-text::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  width: 0px;
+  height: 2px;
+  background-color: #2b1e31;
+  transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.arrow {
+  position: absolute;
+  top: 44%;
+  /* transform: translateY(-50%); */
+  left: 95%;
+  transition: 0.2s;
+
+  width: 0px;
+}
+
+.discover-button-container:hover > .discover-text::before {
+  width: 0px;
+}
+
+.discover-button-container:hover > .discover-text::after {
+  width: 16px;
+}
+
+.discover-button-container:hover > .arrow {
+  width: 8px;
+  transition-delay: 0.2s;
+}
+
+.discover-button-container:hover > .discover-text {
+  left: 13%;
+}
+
+.discover-button-container:hover > .arrow {
+  left: 106%;
+}
+
+.discover:hover {
+  width: 80px;
+  height: 80px;
 }
 
 /* Case Study| Project Template */
@@ -821,13 +936,13 @@ h5 {
   z-index: 1;
 }
 
-.research-photos-grid>div>img {
+.research-photos-grid > div > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.research-photos-grid>.big {
+.research-photos-grid > .big {
   grid-column: span 2;
 }
 
@@ -1104,8 +1219,7 @@ img {
 }
 
 .background-lines {
-  width: 99%;
-  margin: 10;
+  width: 100%;
   overflow: hidden;
   position: absolute;
 }
@@ -1310,6 +1424,12 @@ Sorting and shuffling */
   transform: translateY(-100%);
 }
 
+.blog-footer {
+  width: 100%;
+  position: relative;
+  height: 70vh;
+}
+
 /* About Page  
  ------------------------------------
  ----------------------------------
@@ -1382,7 +1502,7 @@ Sorting and shuffling */
   z-index: 2;
 } */
 
-.watch-showreel>p {
+.watch-showreel > p {
   font-family: saurabh-book;
   font-size: 24px;
   position: absolute;
@@ -1464,10 +1584,32 @@ Sorting and shuffling */
   right: 0%;
 }
 
-.showreel-tiny-image>img {
+.showreel-tiny-image > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Video Play */
+.modal-dialog {
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+.modal-body {
+  position: relative;
+  padding: 0px;
+}
+
+.close {
+  position: absolute;
+  right: -30px;
+  top: 0;
+  z-index: 999;
+  font-size: 2rem;
+  font-weight: normal;
+  color: #fff;
+  opacity: 1;
 }
 
 .about-blank-section1 {
@@ -1548,5 +1690,4 @@ Sorting and shuffling */
 .lightwidget {
   display: flex;
   flex-wrap: wrap;
-
 }

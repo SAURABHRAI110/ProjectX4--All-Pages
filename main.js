@@ -25,8 +25,8 @@ if (document.getElementById("canv")) {
         $.lineTo(
           60 * Math.sin(i / 7) + j + 0.008 * j * j,
           Math.floor(
-            h / 1.9 +
-            j / 2 * Math.sin(j / 50 - t / 50 - i / 118) +
+            h / 1.7 +
+            j / 3 * Math.sin(j / 50 - t / 50 - i / 118) +
             i * 0.9 * Math.sin(j / 25 - (i + t) / 65)
           )
         );

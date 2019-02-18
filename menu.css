@@ -467,10 +467,10 @@ html.has-smooth-scroll {
     overflow: hidden
 }
 
-html:not(.has-smooth-scroll) {
+/* html:not(.has-smooth-scroll) {
     overflow: scroll;
     -webkit-overflow-scrolling: touch
-}
+} */
 
 html[data-template=jobs] {
     background-color: #edeaea
