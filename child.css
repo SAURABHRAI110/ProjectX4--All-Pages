@@ -232,7 +232,7 @@ Home Page
 .para {
   font-family: saurabh-book;
   font-size: 27px;
-  line-height: 25px;
+  line-height: 35px;
 }
 
 .hero-circle {
@@ -520,6 +520,33 @@ gallery with grid and changing image with time and parallax */
   position: relative;
 }
 
+.light-bg1 {
+  width: 70%;
+  height: 12%;
+  margin-left: 14%;
+  opacity: 0.8;
+  background-color: #ececec;
+  position: absolute;
+  margin-top: 100px;
+}
+.light-bg2 {
+  width: 100%;
+  height: 12%;
+  opacity: 1;
+  background-color: #ececec;
+  position: absolute;
+  margin-top: 100px;
+}
+.light-bg3 {
+  width: 200px;
+  height: 200px;
+  opacity: 1;
+  z-index: 0;
+  background-color: #ececec;
+  position: absolute;
+  margin-top: 300px;
+  margin-left: 75%;
+}
 /* Section4 Grid Work
 ---------------------------------- */
 
@@ -672,6 +699,34 @@ gallery with grid and changing image with time and parallax */
   height: 80px;
 }
 
+/* HomE BLOG */
+
+.home-blog-section {
+  width: 100%;
+  height: auto;
+}
+
+.home-article-container {
+  width: 80%;
+  margin-left: 13%;
+  min-height: 46vh;
+  display: block;
+  position: relative;
+  background-color: white;
+}
+
+.read-all-article {
+  width: 80%;
+  margin-left: 13%;
+  position: relative;
+  height: 100px;
+}
+
+.read-more {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+}
 /* Case Study| Project Template */
 /* -----------------------------------
 ------------------------------------
@@ -1274,7 +1329,6 @@ Sorting and shuffling */
 
 .blog-section3 {
   width: 100%;
-
   height: auto;
 }
 
