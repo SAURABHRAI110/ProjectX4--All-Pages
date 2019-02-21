@@ -94,19 +94,26 @@ p {
   --secondary-color: #1c1b20;
 }
 
+
 @font-face {
-  src: url("Font/CircularStd-Bold.otf");
-  font-family: saurabh;
+  font-family: 'saurabh';
+  src: url(Font/circularstd-bold.woff2) format("woff2"), url(Font/circularstd-bold.woff) format("woff");
+  font-weight: 400;
+  font-style: normal
 }
 
 @font-face {
-  src: url("Font/CircularStd-Book.otf");
-  font-family: saurabh-book;
+  font-family: 'saurabh-book';
+  src: url(Font/circularstd-book.woff2) format("woff2"), url(Font/circularstd-book.woff) format("woff");
+  font-weight: 500;
+  font-style: normal
 }
 
 @font-face {
-  src: url("Font/CircularStd-Medium.otf");
-  font-family: saurabh-medium;
+  font-family: 'saurabh-medium';
+  src: url(Font/circularstd-medium.woff2) format("woff2"), url(Font/circularstd-medium.woff) format("woff");
+  font-weight: 700;
+  font-style: normal
 }
 
 .white {
@@ -328,28 +335,28 @@ gallery with grid and changing image with time and parallax */
     "m n o p q r"; */
 }
 
-.home-section-2 > .bottom-fit {
+.home-section-2>.bottom-fit {
   align-items: flex-end;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2 > .middle-fit {
+.home-section-2>.middle-fit {
   align-items: center;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2 > .up-fit {
+.home-section-2>.up-fit {
   align-items: baseline;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2 > div > img {
+.home-section-2>div>img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -529,6 +536,7 @@ gallery with grid and changing image with time and parallax */
   position: absolute;
   margin-top: 100px;
 }
+
 .light-bg2 {
   width: 100%;
   height: 12%;
@@ -537,6 +545,7 @@ gallery with grid and changing image with time and parallax */
   position: absolute;
   margin-top: 100px;
 }
+
 .light-bg3 {
   width: 200px;
   height: 200px;
@@ -547,6 +556,7 @@ gallery with grid and changing image with time and parallax */
   margin-top: 300px;
   margin-left: 75%;
 }
+
 /* Section4 Grid Work
 ---------------------------------- */
 
@@ -632,7 +642,7 @@ gallery with grid and changing image with time and parallax */
   font-size: 25px;
 }
 
-.discover-button-container:hover > .discover {
+.discover-button-container:hover>.discover {
   background-color: bisque;
   margin-left: 70%;
 }
@@ -673,24 +683,24 @@ gallery with grid and changing image with time and parallax */
   width: 0px;
 }
 
-.discover-button-container:hover > .discover-text::before {
+.discover-button-container:hover>.discover-text::before {
   width: 0px;
 }
 
-.discover-button-container:hover > .discover-text::after {
+.discover-button-container:hover>.discover-text::after {
   width: 16px;
 }
 
-.discover-button-container:hover > .arrow {
+.discover-button-container:hover>.arrow {
   width: 8px;
   transition-delay: 0.2s;
 }
 
-.discover-button-container:hover > .discover-text {
+.discover-button-container:hover>.discover-text {
   left: 13%;
 }
 
-.discover-button-container:hover > .arrow {
+.discover-button-container:hover>.arrow {
   left: 106%;
 }
 
@@ -727,6 +737,7 @@ gallery with grid and changing image with time and parallax */
   top: 5%;
   left: 10%;
 }
+
 /* Case Study| Project Template */
 /* -----------------------------------
 ------------------------------------
@@ -991,13 +1002,13 @@ h5 {
   z-index: 1;
 }
 
-.research-photos-grid > div > img {
+.research-photos-grid>div>img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.research-photos-grid > .big {
+.research-photos-grid>.big {
   grid-column: span 2;
 }
 
@@ -1556,7 +1567,7 @@ Sorting and shuffling */
   z-index: 2;
 } */
 
-.watch-showreel > p {
+.watch-showreel>p {
   font-family: saurabh-book;
   font-size: 24px;
   position: absolute;
@@ -1638,7 +1649,7 @@ Sorting and shuffling */
   right: 0%;
 }
 
-.showreel-tiny-image > img {
+.showreel-tiny-image>img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1728,7 +1739,7 @@ Sorting and shuffling */
   margin-bottom: 4%;
 }
 
-.instagram-feed {
+/* .instagram-feed {
   width: 70%;
   margin: auto;
 }
@@ -1744,4 +1755,70 @@ Sorting and shuffling */
 .lightwidget {
   display: flex;
   flex-wrap: wrap;
+} */
+
+
+/* capabilities */
+
+.capabilities-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+}
+
+.capabilities-left {
+  margin-left: 20%;
+  width: 31.5%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.capabilities-right {
+  margin-top: 3%;
+  margin-right: 17%;
+  margin-bottom: 3%;
+  width: 31.5%;
+
+}
+
+.c-text {
+  font-family: saurabh-book;
+  font-size: 27px;
+  line-height: 20px;
+  transition: .3s;
+  color: black;
+}
+
+.c-text::before {
+  content: "";
+  height: 2px;
+  background-color: #242424;
+  width: 0px;
+  margin-left: -20px;
+  position: absolute;
+  margin-top: 10px;
+  transition: width .3s;
+
+}
+
+.c-text:hover::before {
+  width: 20px;
+}
+
+.c-text:hover {
+  padding-left: 20px;
+}
+
+.c-pic {
+  position: absolute;
+  width: 20%;
+  top: 20%;
+  left: 20%;
+  opacity: 0;
+  transition: .1s;
+}
+
+.c-text:hover+.c-pic {
+  opacity: 1;
 }
