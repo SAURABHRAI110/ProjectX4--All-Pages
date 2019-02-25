@@ -6,6 +6,10 @@ html,
 body {
   width: 100%;
   overflow-x: hidden;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -webkit-hyphens: none;
+  hyphens: none;
 }
 
 html,
@@ -195,6 +199,10 @@ Home Page
   background-color: #372154;
 }
 
+.c-nav-codelove {
+  width: 75%;
+}
+
 .hero-title-div {
   position: absolute;
   margin-left: 20%;
@@ -234,7 +242,7 @@ Home Page
 .para {
   font-family: saurabh-book;
   font-size: 27px;
-  line-height: 35px;
+  line-height: 42px;
 }
 
 .hero-circle {
@@ -330,28 +338,28 @@ gallery with grid and changing image with time and parallax */
     "m n o p q r"; */
 }
 
-.home-section-2 > .bottom-fit {
+.home-section-2>.bottom-fit {
   align-items: flex-end;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2 > .middle-fit {
+.home-section-2>.middle-fit {
   align-items: center;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2 > .up-fit {
+.home-section-2>.up-fit {
   align-items: baseline;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2 > div > img {
+.home-section-2>div>img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -637,7 +645,7 @@ gallery with grid and changing image with time and parallax */
   font-size: 25px;
 }
 
-.discover-button-container:hover > .discover {
+.discover-button-container:hover>.discover {
   background-color: bisque;
   margin-left: 70%;
 }
@@ -678,24 +686,24 @@ gallery with grid and changing image with time and parallax */
   width: 0px;
 }
 
-.discover-button-container:hover > .discover-text::before {
+.discover-button-container:hover>.discover-text::before {
   width: 0px;
 }
 
-.discover-button-container:hover > .discover-text::after {
+.discover-button-container:hover>.discover-text::after {
   width: 16px;
 }
 
-.discover-button-container:hover > .arrow {
+.discover-button-container:hover>.arrow {
   width: 8px;
   transition-delay: 0.2s;
 }
 
-.discover-button-container:hover > .discover-text {
+.discover-button-container:hover>.discover-text {
   left: 13%;
 }
 
-.discover-button-container:hover > .arrow {
+.discover-button-container:hover>.arrow {
   left: 106%;
 }
 
@@ -997,13 +1005,13 @@ h5 {
   z-index: 1;
 }
 
-.research-photos-grid > div > img {
+.research-photos-grid>div>img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.research-photos-grid > .big {
+.research-photos-grid>.big {
   grid-column: span 2;
 }
 
@@ -1160,7 +1168,7 @@ h5 {
   height: 100%;
 }
 
-img {
+.projects-image>img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1277,12 +1285,6 @@ img {
   width: 100vw;
   height: 100vh;
   background-color: white;
-}
-
-.background-lines {
-  width: 100%;
-  overflow: hidden;
-  position: absolute;
 }
 
 /* Blog Section 2
@@ -1495,28 +1497,36 @@ Sorting and shuffling */
  ----------------------------------
  */
 
+.about-hero-section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* About Section 1 */
+
+.bg-canvas {
+  position: absolute;
+}
+
+.about-title-div {
+  margin-left: 20%;
+  margin-top: 9%;
+  margin-right: 16%;
+  position: relative;
+}
+
 .about-para-div {
   margin-left: 0%;
   margin-top: 4%;
   margin-right: 13%;
   margin-bottom: 4%;
-}
-
-.about-para {
-  margin-top: -20px;
-  margin-right: 0%;
-}
-
-/* About Section 1 */
-
-.about-section-1 {
-  position: absolute;
-  height: 100vh;
+  position: relative;
 }
 
 .about-title {
   font-family: saurabh;
-  font-size: 91px;
+  font-size: 80px;
   position: relative;
   line-height: 90px;
   color: #171717;
@@ -1529,9 +1539,7 @@ Sorting and shuffling */
 
 .watch-showreel {
   width: 100%;
-  margin-right: 17%;
-  margin-left: -3px;
-  height: 13vh;
+  height: 100px;
   position: relative;
 }
 
@@ -1562,7 +1570,7 @@ Sorting and shuffling */
   z-index: 2;
 } */
 
-.watch-showreel > p {
+.watch-showreel>p {
   font-family: saurabh-book;
   font-size: 24px;
   position: absolute;
@@ -1638,21 +1646,21 @@ Sorting and shuffling */
 
 .showreel-tiny-image {
   width: 50%;
-  height: 13vh;
+  height: 100%;
   position: absolute;
   background-color: var(--primary-color);
   right: 0%;
 }
 
-.showreel-tiny-image > img {
+.showreel-tiny-image>img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Video Play */
+/* Video Play
 .modal-dialog {
-  max-width: 800px;
+  max-width: 80px;
   margin: 30px auto;
 }
 
@@ -1670,13 +1678,7 @@ Sorting and shuffling */
   font-weight: normal;
   color: #fff;
   opacity: 1;
-}
-
-.about-blank-section1 {
-  width: 100vw;
-  height: 100vh;
-  background-color: white;
-}
+} */
 
 .about-section2 {
   height: 80vh;
@@ -1734,29 +1736,9 @@ Sorting and shuffling */
   margin-bottom: 4%;
 }
 
-/* .instagram-feed {
-  width: 70%;
-  margin: auto;
-}
-
-.powered-by {
-  display: none !important;
-}
-
-.powered-by img {
-  display: none;
-}
-
-.lightwidget {
-  display: flex;
-  flex-wrap: wrap;
-} */
-
-/* capabilities */
-
 .a-capabilities-section {
   width: 100%;
-  height: auto;
+  /* height: auto; */
   display: flex;
   position: relative;
 }
@@ -1815,30 +1797,146 @@ Sorting and shuffling */
   transition: 0.1s;
 }
 
-.c-text:hover + .c-pic {
+.c-text:hover+.c-pic {
   opacity: 1;
 }
 
 .c-outline-bg-text {
+  width: 100%;
+  text-align: center;
   font-family: saurabh;
   font-size: 200px;
   position: absolute;
   opacity: 0.2;
 }
 
-.c-text2:hover + .c-outline-bg-text {
+.c-text2:hover+.c-outline-bg-text {
   opacity: 1;
 }
 
 .a-tools-section {
   width: 100%;
-  height: auto;
+  /* height: auto; */
   display: flex;
   position: relative;
 }
+
 .a-projects-section {
   width: 100%;
-  height: auto;
+  /* height: auto; */
   display: flex;
   position: relative;
+}
+
+.upside-wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 120vh;
+}
+
+.upsidedown-container {
+  width: 100%;
+  background-color: white;
+  position: absolute;
+}
+
+.upsidedown1 {
+  width: 20%;
+  position: absolute;
+  left: 0%;
+}
+
+.upsidedown2 {
+  width: 20%;
+  position: absolute;
+  left: 20%;
+}
+
+.upsidedown3 {
+  width: 20%;
+  position: absolute;
+  left: 40%;
+}
+
+.upsidedown4 {
+  width: 20%;
+  position: absolute;
+  left: 60%;
+}
+
+.upsidedown5 {
+  width: 20%;
+  position: absolute;
+  left: 80%;
+}
+
+.a-section1 {
+  width: 100%;
+  height: 200vh;
+  position: absolute;
+}
+
+
+
+/* People         
+=-----------------
+------------------------------------- */
+.people-hero {
+  width: 80%;
+  min-height: 100vh;
+  left: 10%;
+  position: relative;
+}
+
+.people-container {
+  display: grid;
+  grid-gap: .8px;
+  position: absolute;
+  background-color: rgb(145, 145, 145);
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  grid-auto-rows: auto;
+  grid-auto-flow: dense;
+  height: auto;
+  width: 100%;
+  z-index: 1;
+}
+
+.p-block {
+  height: 250px;
+  background-color: white;
+  position: relative;
+}
+
+.p-block:hover {
+  background-color: var(--primary-color);
+}
+
+.p-block:hover>.p-name {
+  color: white;
+  transition: .1s;
+}
+
+.p-block:hover>img {
+  height: 50%;
+  transition: .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.p-block>img {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 65%;
+
+}
+
+.p-name {
+  text-align: center;
+  bottom: -6px;
+  width: 100%;
+  position: absolute;
+  font-family: saurabh-book;
+  font-size: 20px;
+  color: black;
 }
