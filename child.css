@@ -338,28 +338,28 @@ gallery with grid and changing image with time and parallax */
     "m n o p q r"; */
 }
 
-.home-section-2>.bottom-fit {
+.home-section-2 > .bottom-fit {
   align-items: flex-end;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2>.middle-fit {
+.home-section-2 > .middle-fit {
   align-items: center;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2>.up-fit {
+.home-section-2 > .up-fit {
   align-items: baseline;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2>div>img {
+.home-section-2 > div > img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -531,7 +531,7 @@ gallery with grid and changing image with time and parallax */
 }
 
 .light-bg1 {
-  width: 70%;
+  width: 45%;
   height: 12%;
   margin-left: 14%;
   opacity: 0.8;
@@ -546,7 +546,7 @@ gallery with grid and changing image with time and parallax */
   opacity: 1;
   background-color: #ececec;
   position: absolute;
-  margin-top: 100px;
+  margin-top: 250px;
 }
 
 .light-bg3 {
@@ -558,6 +558,26 @@ gallery with grid and changing image with time and parallax */
   position: absolute;
   margin-top: 300px;
   margin-left: 75%;
+}
+.light-bg4 {
+  width: 150px;
+  height: 150px;
+  opacity: 1;
+  z-index: 0;
+  background-color: #ececec;
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 65%;
+}
+.light-bg5 {
+  width: 170px;
+  height: 170px;
+  opacity: 1;
+  z-index: 0;
+  background-color: #ececec;
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 70%;
 }
 
 /* Section4 Grid Work
@@ -645,7 +665,7 @@ gallery with grid and changing image with time and parallax */
   font-size: 25px;
 }
 
-.discover-button-container:hover>.discover {
+.discover-button-container:hover > .discover {
   background-color: bisque;
   margin-left: 70%;
 }
@@ -686,24 +706,24 @@ gallery with grid and changing image with time and parallax */
   width: 0px;
 }
 
-.discover-button-container:hover>.discover-text::before {
+.discover-button-container:hover > .discover-text::before {
   width: 0px;
 }
 
-.discover-button-container:hover>.discover-text::after {
+.discover-button-container:hover > .discover-text::after {
   width: 16px;
 }
 
-.discover-button-container:hover>.arrow {
+.discover-button-container:hover > .arrow {
   width: 8px;
   transition-delay: 0.2s;
 }
 
-.discover-button-container:hover>.discover-text {
+.discover-button-container:hover > .discover-text {
   left: 13%;
 }
 
-.discover-button-container:hover>.arrow {
+.discover-button-container:hover > .arrow {
   left: 106%;
 }
 
@@ -1005,13 +1025,13 @@ h5 {
   z-index: 1;
 }
 
-.research-photos-grid>div>img {
+.research-photos-grid > div > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.research-photos-grid>.big {
+.research-photos-grid > .big {
   grid-column: span 2;
 }
 
@@ -1168,7 +1188,7 @@ h5 {
   height: 100%;
 }
 
-.projects-image>img {
+.projects-image > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1570,7 +1590,7 @@ Sorting and shuffling */
   z-index: 2;
 } */
 
-.watch-showreel>p {
+.watch-showreel > p {
   font-family: saurabh-book;
   font-size: 24px;
   position: absolute;
@@ -1652,7 +1672,7 @@ Sorting and shuffling */
   right: 0%;
 }
 
-.showreel-tiny-image>img {
+.showreel-tiny-image > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1797,7 +1817,7 @@ Sorting and shuffling */
   transition: 0.1s;
 }
 
-.c-text:hover+.c-pic {
+.c-text:hover + .c-pic {
   opacity: 1;
 }
 
@@ -1810,7 +1830,7 @@ Sorting and shuffling */
   opacity: 0.2;
 }
 
-.c-text2:hover+.c-outline-bg-text {
+.c-text2:hover + .c-outline-bg-text {
   opacity: 1;
 }
 
@@ -1877,21 +1897,20 @@ Sorting and shuffling */
   position: absolute;
 }
 
-
-
 /* People         
 =-----------------
 ------------------------------------- */
 .people-hero {
   width: 80%;
   min-height: 100vh;
-  left: 10%;
+  left: 50%;
+  transform: translate(-50%);
   position: relative;
 }
 
 .people-container {
   display: grid;
-  grid-gap: .8px;
+  grid-gap: 0.8px;
   position: absolute;
   background-color: rgb(145, 145, 145);
   grid-template-columns: repeat(auto-fit, minmax(250px, auto));
@@ -1912,23 +1931,22 @@ Sorting and shuffling */
   background-color: var(--primary-color);
 }
 
-.p-block:hover>.p-name {
+.p-block:hover > .p-name {
   color: white;
-  transition: .1s;
+  transition: 0.1s;
 }
 
-.p-block:hover>img {
+.p-block:hover > img {
   height: 50%;
-  transition: .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.p-block>img {
+.p-block > img {
   position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 65%;
-
 }
 
 .p-name {

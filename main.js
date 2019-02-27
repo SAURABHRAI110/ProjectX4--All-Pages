@@ -27,7 +27,7 @@ if (document.getElementById("canv")) {
   var h = (c.height = window.innerHeight);
 
   var intLines = 15;
-  var draw = function(a, b, t) {
+  var draw = function (a, b, t) {
     $.lineWidth = 0.2;
     //background color
     $.fillStyle = "white";
@@ -42,8 +42,8 @@ if (document.getElementById("canv")) {
           60 * Math.sin(i / 7) + j + 0.008 * j * j,
           Math.floor(
             h / 1.7 +
-              (j / 3) * Math.sin(j / 50 - t / 50 - i / 118) +
-              i * 0.9 * Math.sin(j / 25 - (i + t) / 65)
+            (j / 3) * Math.sin(j / 50 - t / 50 - i / 118) +
+            i * 0.9 * Math.sin(j / 25 - (i + t) / 65)
           )
         );
       }
@@ -52,7 +52,7 @@ if (document.getElementById("canv")) {
   };
 
   var t = 0;
-  var run = function() {
+  var run = function () {
     //note the self-calling function via callback window.requestAnimationFrame
     //window.requestAnimationFrame(run);
     t += 0.5;
@@ -122,7 +122,7 @@ if (document.getElementById("myBtnContainer")) {
   var btnContainer = document.getElementById("myBtnContainer");
   var btns = btnContainer.getElementsByClassName("btn");
   for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function() {
+    btns[i].addEventListener("click", function () {
       var current = document.getElementsByClassName("active");
       current[0].className = current[0].className.replace(" active", "");
       this.className += " active";
@@ -141,7 +141,7 @@ if (document.getElementById("myBtnContainer")) {
 
 //scroll bar get disabled after pressing f11, in full screen mode.
 //clear web view
-$(window).resize(function() {
+$(window).resize(function () {
   if (
     window.fullScreen ||
     (window.innerWidth == screen.width && window.innerHeight == screen.height)
@@ -152,8 +152,10 @@ $(window).resize(function() {
   }
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
   $(window).resize();
   // trigger the function when the page loads
   // if you have another $(document).ready(), simply add this line to it
 });
+
+G
