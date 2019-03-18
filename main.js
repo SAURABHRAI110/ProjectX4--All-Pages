@@ -4,7 +4,7 @@
 //$("html").easeScroll();
 $("html").easeScroll({
   frameRate: 60,
-  animationTime: 1000,
+  animationTime: 1200,
   stepSize: 120,
   pulseAlgorithm: !0,
   pulseScale: 8,

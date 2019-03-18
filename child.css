@@ -338,28 +338,28 @@ gallery with grid and changing image with time and parallax */
     "m n o p q r"; */
 }
 
-.home-section-2 > .bottom-fit {
+.home-section-2>.bottom-fit {
   align-items: flex-end;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2 > .middle-fit {
+.home-section-2>.middle-fit {
   align-items: center;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2 > .up-fit {
+.home-section-2>.up-fit {
   align-items: baseline;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2 > div > img {
+.home-section-2>div>img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -532,7 +532,7 @@ gallery with grid and changing image with time and parallax */
 
 .light-bg1 {
   width: 45%;
-  height: 12%;
+  height: 500px;
   margin-left: 14%;
   opacity: 0.8;
   background-color: #ececec;
@@ -541,10 +541,10 @@ gallery with grid and changing image with time and parallax */
 }
 
 .light-bg2 {
-  width: 100%;
-  height: 12%;
+  width: 50%;
+  height: 30%;
   opacity: 1;
-  background-color: #ececec;
+  background-color: rgb(187, 187, 187);
   position: absolute;
   margin-top: 250px;
 }
@@ -559,6 +559,7 @@ gallery with grid and changing image with time and parallax */
   margin-top: 300px;
   margin-left: 75%;
 }
+
 .light-bg4 {
   width: 150px;
   height: 150px;
@@ -569,6 +570,7 @@ gallery with grid and changing image with time and parallax */
   margin-top: 100px;
   margin-left: 65%;
 }
+
 .light-bg5 {
   width: 170px;
   height: 170px;
@@ -665,7 +667,7 @@ gallery with grid and changing image with time and parallax */
   font-size: 25px;
 }
 
-.discover-button-container:hover > .discover {
+.discover-button-container:hover>.discover {
   background-color: bisque;
   margin-left: 70%;
 }
@@ -706,24 +708,24 @@ gallery with grid and changing image with time and parallax */
   width: 0px;
 }
 
-.discover-button-container:hover > .discover-text::before {
+.discover-button-container:hover>.discover-text::before {
   width: 0px;
 }
 
-.discover-button-container:hover > .discover-text::after {
+.discover-button-container:hover>.discover-text::after {
   width: 16px;
 }
 
-.discover-button-container:hover > .arrow {
+.discover-button-container:hover>.arrow {
   width: 8px;
   transition-delay: 0.2s;
 }
 
-.discover-button-container:hover > .discover-text {
+.discover-button-container:hover>.discover-text {
   left: 13%;
 }
 
-.discover-button-container:hover > .arrow {
+.discover-button-container:hover>.arrow {
   left: 106%;
 }
 
@@ -1025,13 +1027,13 @@ h5 {
   z-index: 1;
 }
 
-.research-photos-grid > div > img {
+.research-photos-grid>div>img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.research-photos-grid > .big {
+.research-photos-grid>.big {
   grid-column: span 2;
 }
 
@@ -1188,7 +1190,7 @@ h5 {
   height: 100%;
 }
 
-.projects-image > img {
+.projects-image>img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1590,7 +1592,7 @@ Sorting and shuffling */
   z-index: 2;
 } */
 
-.watch-showreel > p {
+.watch-showreel>p {
   font-family: saurabh-book;
   font-size: 24px;
   position: absolute;
@@ -1672,7 +1674,7 @@ Sorting and shuffling */
   right: 0%;
 }
 
-.showreel-tiny-image > img {
+.showreel-tiny-image>img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1820,6 +1822,7 @@ Sorting and shuffling */
 .c-text:hover::before {
   width: 20px;
 }
+
 .c-text:hover::after {
   width: 80%;
   overflow: hidden;
@@ -1829,6 +1832,7 @@ Sorting and shuffling */
   padding-left: 20px;
   cursor: pointer;
 }
+
 /* .c-text:hover::before {
   right: 0;
   margin-right: 0;
@@ -1907,7 +1911,7 @@ Sorting and shuffling */
   transition: 0.1s;
 }
 
-.c-text:hover + .c-pic {
+.c-text:hover+.c-pic {
   opacity: 1;
 }
 
@@ -1920,7 +1924,7 @@ Sorting and shuffling */
   opacity: 0.2;
 }
 
-.c-text2:hover + .c-outline-bg-text {
+.c-text2:hover+.c-outline-bg-text {
   opacity: 1;
 }
 
@@ -2021,17 +2025,17 @@ Sorting and shuffling */
   background-color: var(--primary-color);
 }
 
-.p-block:hover > .p-name {
+.p-block:hover>.p-name {
   color: white;
   transition: 0.1s;
 }
 
-.p-block:hover > img {
+.p-block:hover>img {
   height: 50%;
   transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.p-block > img {
+.p-block>img {
   position: absolute;
   top: 45%;
   left: 50%;
@@ -2058,6 +2062,7 @@ Sorting and shuffling */
 .reveal {
   position: relative;
 }
+
 /* reveal css */
 
 /* Grid */
@@ -2068,6 +2073,7 @@ Sorting and shuffling */
   display: inline-block;
   overflow: hidden;
 }
+
 .reveal-holder .reveal-block {
   position: absolute;
   top: 15%;
@@ -2075,6 +2081,7 @@ Sorting and shuffling */
   height: 70%;
   background: white;
 }
+
 .reveal-holder .reveal-block::before {
   position: absolute;
   content: "";
@@ -2092,6 +2099,7 @@ Sorting and shuffling */
 .reveal-block.gradient::before {
   background: linear-gradient(to left, #eebf56, #f46ca3);
 }
+
 .reveal-block.red::before {
   background: var(--primary-color);
 }
@@ -2103,6 +2111,7 @@ Sorting and shuffling */
 .reveal-block.extra {
   background: #1b9edf;
 }
+
 .reveal-block.extra::before {
   background: #af74c3;
 }
@@ -2162,6 +2171,7 @@ Sorting and shuffling */
   -webkit-transform: scaleY(1);
   transform: scaleY(1);
 }
+
 [data-aos="reveal-top"].aos-animate {
   -webkit-transform: scaleY(0);
   transform: scaleY(0);
@@ -2173,6 +2183,7 @@ Sorting and shuffling */
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
+
 [data-aos="reveal-left"].aos-animate {
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -2184,6 +2195,7 @@ Sorting and shuffling */
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
+
 [data-aos="reveal-right"].aos-animate {
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -2195,6 +2207,7 @@ Sorting and shuffling */
   -webkit-transform: scaleY(1);
   transform: scaleY(1);
 }
+
 [data-aos="reveal-bottom"].aos-animate {
   -webkit-transform: scaleY(0);
   transform: scaleY(0);
@@ -2207,6 +2220,37 @@ Sorting and shuffling */
   transition-property: visibility;
   transition-duration: 0s;
 }
+
 [data-aos="reveal-item"].aos-animate {
   visibility: visible;
+}
+
+
+.footer {
+  height: 60vh;
+  width: 100%;
+  background-color: var(--primary-color);
+  position: relative;
+}
+
+.footer-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-family: saurabh-book;
+  color: white;
+  text-align: center;
+}
+
+.footer-decoration {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr;
+  grid-template-rows: 100px 100px;
+  grid-gap: 10px;
+}
+
+.footer-decoration__box {
+  background-color: rgb(255, 255, 255);
 }
