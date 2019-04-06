@@ -1,19 +1,19 @@
 //https://github.com/ivmello/easeScroll
 //Ease Scroll all pages
 
-//$("html").easeScroll();
-$("html").easeScroll({
-  frameRate: 60,
-  animationTime: 1200,
-  stepSize: 120,
-  pulseAlgorithm: !0,
-  pulseScale: 8,
-  pulseNormalize: 1,
-  accelerationDelta: 20,
-  accelerationMax: 1,
-  keyboardSupport: !0,
-  arrowScroll: 50
-});
+$("html").easeScroll();
+// $("html").easeScroll({
+//   frameRate: 60,
+//   animationTime: 1000,
+//   stepSize: 120,
+//   pulseAlgorithm: !0,
+//   pulseScale: 8,
+//   pulseNormalize: 1,
+//   accelerationDelta: 20,
+//   accelerationMax: 1,
+//   keyboardSupport: !0,
+//   arrowScroll: 50
+// });
 
 //Wave Background
 //motivation
@@ -157,5 +157,3 @@ $(document).ready(function () {
   // trigger the function when the page loads
   // if you have another $(document).ready(), simply add this line to it
 });
-
-G

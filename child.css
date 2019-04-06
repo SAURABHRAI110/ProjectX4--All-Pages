@@ -50,6 +50,10 @@ body {
   color: #656565;
 }
 
+.black51 {
+  color: #919191;
+}
+
 .black40 {
   color: black;
   opacity: 0.4;
@@ -338,28 +342,28 @@ gallery with grid and changing image with time and parallax */
     "m n o p q r"; */
 }
 
-.home-section-2>.bottom-fit {
+.home-section-2 > .bottom-fit {
   align-items: flex-end;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2>.middle-fit {
+.home-section-2 > .middle-fit {
   align-items: center;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2>.up-fit {
+.home-section-2 > .up-fit {
   align-items: baseline;
   font-size: 2em;
   color: #ffeead;
   display: flex;
 }
 
-.home-section-2>div>img {
+.home-section-2 > div > img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -667,7 +671,7 @@ gallery with grid and changing image with time and parallax */
   font-size: 25px;
 }
 
-.discover-button-container:hover>.discover {
+.discover-button-container:hover > .discover {
   background-color: bisque;
   margin-left: 70%;
 }
@@ -708,24 +712,24 @@ gallery with grid and changing image with time and parallax */
   width: 0px;
 }
 
-.discover-button-container:hover>.discover-text::before {
+.discover-button-container:hover > .discover-text::before {
   width: 0px;
 }
 
-.discover-button-container:hover>.discover-text::after {
+.discover-button-container:hover > .discover-text::after {
   width: 16px;
 }
 
-.discover-button-container:hover>.arrow {
+.discover-button-container:hover > .arrow {
   width: 8px;
   transition-delay: 0.2s;
 }
 
-.discover-button-container:hover>.discover-text {
+.discover-button-container:hover > .discover-text {
   left: 13%;
 }
 
-.discover-button-container:hover>.arrow {
+.discover-button-container:hover > .arrow {
   left: 106%;
 }
 
@@ -914,7 +918,7 @@ h5 {
 .casestudy-info-block {
   position: relative;
   margin-left: 20%;
-  margin-top: 4%;
+  padding-top: 4%;
   margin-right: 18%;
   margin-bottom: 4%;
 }
@@ -1027,13 +1031,13 @@ h5 {
   z-index: 1;
 }
 
-.research-photos-grid>div>img {
+.research-photos-grid > div > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.research-photos-grid>.big {
+.research-photos-grid > .big {
   grid-column: span 2;
 }
 
@@ -1190,7 +1194,7 @@ h5 {
   height: 100%;
 }
 
-.projects-image>img {
+.projects-image > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1592,7 +1596,7 @@ Sorting and shuffling */
   z-index: 2;
 } */
 
-.watch-showreel>p {
+.watch-showreel > p {
   font-family: saurabh-book;
   font-size: 24px;
   position: absolute;
@@ -1674,7 +1678,7 @@ Sorting and shuffling */
   right: 0%;
 }
 
-.showreel-tiny-image>img {
+.showreel-tiny-image > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1911,7 +1915,7 @@ Sorting and shuffling */
   transition: 0.1s;
 }
 
-.c-text:hover+.c-pic {
+.c-text:hover + .c-pic {
   opacity: 1;
 }
 
@@ -1924,7 +1928,7 @@ Sorting and shuffling */
   opacity: 0.2;
 }
 
-.c-text2:hover+.c-outline-bg-text {
+.c-text2:hover + .c-outline-bg-text {
   opacity: 1;
 }
 
@@ -2025,17 +2029,17 @@ Sorting and shuffling */
   background-color: var(--primary-color);
 }
 
-.p-block:hover>.p-name {
+.p-block:hover > .p-name {
   color: white;
   transition: 0.1s;
 }
 
-.p-block:hover>img {
+.p-block:hover > img {
   height: 50%;
   transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.p-block>img {
+.p-block > img {
   position: absolute;
   top: 45%;
   left: 50%;
@@ -2225,32 +2229,184 @@ Sorting and shuffling */
   visibility: visible;
 }
 
-
-.footer {
+.footer-type1 {
   height: 60vh;
   width: 100%;
   background-color: var(--primary-color);
   position: relative;
 }
 
-.footer-content {
+.text-slide-in {
+  font-family: saurabh-book;
+  font-size: 80px;
+  color: white;
+  padding-top: 1%;
+  position: relative;
+}
+
+.hover-link2 a {
+  position: relative;
+  display: inline-block;
+  outline: none;
+  color: white;
+  text-decoration: none;
+}
+
+.link-effect2 a {
+  overflow: hidden;
+}
+
+.link-effect2 a span {
+  position: relative;
+  display: inline-block;
+  -webkit-transition: -webkit-transform 0.4s;
+  -moz-transition: -moz-transform 0.4s;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0, 1);
+}
+
+.link-effect2 a span::before {
+  content: attr(data-hover);
+  position: absolute;
+  top: 100%;
+  color: white;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.link-effect2 a:hover span {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+/* Filminmg Eye Showcase 
+....................
+...................*/
+
+.c-section1 {
+  width: 100%;
+  height: 40vh;
+  background-color: white;
+}
+
+.c-heading {
+  font-family: saurabh-medium;
+  font-size: 60px;
+  margin-bottom: 0;
+  margin-top: 70px;
+  position: relative;
+  z-index: 3;
+  color: var(--primary-color);
+}
+
+.c-heading-sub {
+  font-family: saurabh-medium;
+  font-size: 26px;
+  margin-top: 10px;
+  position: relative;
+  z-index: 3;
+}
+
+.c-min-info {
+  width: 62.5%;
+  position: relative;
+  margin-left: 20%;
+  margin-right: 17%;
+  height: 10vh;
+}
+
+.c-min2-info {
+  width: 63%;
+  position: relative;
+  margin-left: 20%;
+  margin-right: 17%;
+  height: 20vh;
+}
+
+.c-min1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  z-index: 3;
+}
+
+.c-min2 {
+  text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 16px;
-  font-family: saurabh-book;
-  color: white;
-  text-align: center;
+  background-color: white;
+  z-index: 3;
 }
 
-.footer-decoration {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr 2fr;
-  grid-template-rows: 100px 100px;
-  grid-gap: 10px;
+.c-min3 {
+  right: 0;
+  position: absolute;
+  text-align: right;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  z-index: 3;
 }
 
-.footer-decoration__box {
-  background-color: rgb(255, 255, 255);
+.c-section2 {
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  position: relative;
+}
+
+.c-background {
+  width: 70%;
+  left: 20%;
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.c-section2 {
+  height: 160vh;
+  width: 100%;
+  position: relative;
+  padding-top: 40px;
+}
+
+.c-section2_image {
+  width: 70%;
+  left: 17%;
+  background-color: white;
+  height: auto;
+  position: absolute;
+}
+
+.c-section2_image1 {
+  width: 100%;
+  height: 100vh;
+  background-color: #1a1919;
+  position: absolute;
+}
+
+.c-section2_image3 {
+  padding-top: 30%;
+  position: absolute;
+}
+
+.c-section2_image2 {
+  position: absolute;
+  padding-top: 5%;
+}
+
+/* Showcase Filming Eye */
+
+.c-fe-section8 {
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+.z-index {
+  z-index: 10;
+  position: relative;
 }
