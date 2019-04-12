@@ -136,7 +136,8 @@ p {
 }
 @font-face {
   font-family: "mistral";
-  src: url(Font/MISTRAL.TTF) format("ttf");
+   src: url(Font/mistral.woff2) format("woff2"),
+    url(Font/mistral.woff) format("woff");
   font-style: normal;
 }
 
