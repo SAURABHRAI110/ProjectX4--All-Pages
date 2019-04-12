@@ -23,7 +23,6 @@ body {
 
 * {
   box-sizing: border-box;
-  touch-action: none;
 }
 
 ::-moz-selection {
