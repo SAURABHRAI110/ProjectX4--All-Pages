@@ -425,9 +425,12 @@ Home Page
   left: 12%;
 }
 .hero-circle >img {
-  height: 144px;
+    height: 144px;
 }
 .hero-title-div{
+  margin-left: 12%;
+}
+.big-title-div{
   margin-left: 12%;
 }
 .nametag1{
