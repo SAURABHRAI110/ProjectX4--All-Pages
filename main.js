@@ -1,6 +1,6 @@
 //https://github.com/ivmello/easeScroll
 //Ease Scroll all pages
-
+// A $( document ).ready() block.
 $("html").easeScroll();
 // $("html").easeScroll({
 //   frameRate: 60,
@@ -14,6 +14,16 @@ $("html").easeScroll();
 //   keyboardSupport: !0,
 //   arrowScroll: 50
 // });
+
+//Lottie BodyMovin
+var animation = bodymovin.loadAnimation({
+  container: document.getElementById('bm'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'data.json'
+})
+
 
 //Wave Background
 //motivation

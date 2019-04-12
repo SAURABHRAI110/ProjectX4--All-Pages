@@ -12,6 +12,8 @@ body {
   hyphens: none;
 }
 
+
+
 html,
 body {
   margin: 0;
@@ -21,6 +23,7 @@ body {
 
 * {
   box-sizing: border-box;
+  touch-action: none;
 }
 
 ::-moz-selection {
@@ -99,6 +102,16 @@ p {
   --secondary-color: #1c1b20;
 }
 
+:root {
+	--white: #ffffff;
+	--black: #000000;
+	--dark-blue: #1f2029;
+	--dark-light: #424455;
+	--red: #da2c4d;
+	--yellow: #f8ab37;
+	--grey: #ecedf3;
+}
+
 @font-face {
   font-family: "saurabh";
   src: url(Font/circularstd-bold.woff2) format("woff2"),
@@ -145,6 +158,23 @@ body {
   margin-left: 20%;
   margin-right: 17%;
 }
+
+.para-big{
+  font-family: saurabh-book;
+    font-size: 27px;
+    line-height: 42px;
+}
+.para-medium{
+  font-family: saurabh-book;
+    font-size: 22px;
+    line-height:35px;
+}
+.para-small{
+  font-family: saurabh-book;
+  font-size: 18px;
+  line-height: 30px;
+}
+
 
 /* ---------------------------------------------------------------------------
 Home Page
@@ -281,14 +311,17 @@ Home Page
 }
 .nametag1 {
   position: absolute;
-  left: 2%;
-  margin-top: -13%;
+  left: 20%;
+  margin-top: 20px;
+ 
 }
 
 .nametag2 {
   position: absolute;
-  left: 40%;
-  margin-top: -13%;
+  left: 52%;
+  text-align: left;
+  margin-top: 20px;
+ 
 }
 
 .nametag-text {
@@ -330,11 +363,69 @@ Home Page
   content: "";
 }
 
-@media (max-width: 999px) {
-  .home-section-1 {
-    margin-top: 100px;
-  }
+@media screen and (max-width: 999px){
+  .hero-title {
+    font-size: 70px;
+    line-height: 77px;
+
 }
+.home-section-1 {
+  margin-top: 30px;
+}
+.hero-title-div {
+  margin-left: 20%;
+  margin-top: 8%;
+}
+.nametag1{
+  margin-top: 10px;
+}
+.nametag2{
+  margin-top: 10px;
+}
+.showreel-heading{
+  font-size: 65px;
+}
+}
+
+@media screen and (max-width: 800px){
+  .hero-title {
+    font-size: 60px;
+    line-height: 64px;
+
+}
+.home-section-1 {
+  margin-top: 30px;
+}
+
+.nametag1{
+  margin-top: 10px;
+}
+.nametag2{
+  margin-top: 35px;
+  left: 20%;
+}
+.nametag1{
+  margin-top: 5px;
+}
+
+.showreel-heading{
+  font-size: 60px;
+}
+}
+
+@media screen and (max-width: 500px){
+.nametag2{
+  margin-top: 35px;
+  left: 20%;
+}
+.nametag1{
+  margin-top: 5px;
+}
+.showreel-heading{
+  font-size: 55px;
+}
+}
+
 
 /* Section two 
 gallery with grid and changing image with time and parallax */
@@ -398,7 +489,7 @@ gallery with grid and changing image with time and parallax */
 
 .more-about-me{
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   position: relative;
 }
 
@@ -442,10 +533,11 @@ gallery with grid and changing image with time and parallax */
 .showreel-heading{
   position: relative;
   color: white;
-  font-size: 80px;
+  font-size: 90px;
   text-align: center;
   margin-bottom: 0px;
   margin-top: 0px;
+  letter-spacing: 4px;
     
 }
 
@@ -457,7 +549,7 @@ gallery with grid and changing image with time and parallax */
 }
 
 .showreel-sub-heading{
-  font-size: 20px;
+  font-size: 26px;
   position: relative;
   color: white;
   text-align: center;
@@ -468,6 +560,7 @@ gallery with grid and changing image with time and parallax */
   object-fit: cover;
   position: absolute;
 }
+
 /* 
 ----Section 3 / Home 
 -------------------------- */
@@ -695,7 +788,13 @@ gallery with grid and changing image with time and parallax */
 
   z-index: 2;
 }
+.more-work-container{
+  position: relative;
+  width: 100%;
+  height: 60vh;
+}
 
+.
 /* Media Queries
 -----------------------------
 ------------------------------- */
@@ -734,22 +833,9 @@ gallery with grid and changing image with time and parallax */
 
 /* Discover more button */
 
-.discover-article-container {
-  position: relative;
-  width: 100%;
-  background-color: var(--primary-color);
-  height: 50vh;
-}
 
-.more-article-heading {
-  font-size: 30px;
-  text-align: left;
-  text-align: left;
-  top: 38%;
-  position: relative;
-  left: 17%;
-  color: white;
-}
+
+
 
 .discover-article-wrapper {
   position: absolute;
@@ -870,6 +956,15 @@ gallery with grid and changing image with time and parallax */
 
 }
 
+
+/* Home red Box */
+
+.home-red-box{
+  width: 100%;
+  height: 90vh;
+  background-color: rgb(192, 192, 192);
+  position: relative;
+}
 /* HomE BLOG */
 
 .home-blog-section {
@@ -899,6 +994,23 @@ gallery with grid and changing image with time and parallax */
   left: 10%;
 }
 
+.latest-insight-container{
+  height: 50vh;
+}
+.c-padding1{
+
+}
+
+.insight-title{
+  font-family: saurabh;
+  font-size: 80px;
+  position: relative;
+  line-height: 80px;
+  color: #171717;
+  padding-top: 8%;
+  margin-bottom: 20px;
+  position: relative;
+}
 /* Case Study| Project Template */
 /* -----------------------------------
 ------------------------------------
@@ -1257,6 +1369,8 @@ h5 {
   display: flex;
   width: 70%;
   margin-left: 16.4%;
+  margin-bottom: -150px;
+  
 }
 
 .showcase-container {
@@ -1595,10 +1709,10 @@ Sorting and shuffling */
     margin-left: 10%;
   }
 
-  .hero-title-div {
+  /* .hero-title-div {
     margin-left: 10%;
     margin-top: 8%;
-  }
+  } */
 
   .article-pic {
     width: 190px;
@@ -2765,3 +2879,9 @@ Sorting and shuffling */
   z-index: 10;
   position: relative;
 }
+
+#bm {
+  width: 100%;
+  height: 100%;
+}
+
