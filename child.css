@@ -3172,7 +3172,8 @@ Sorting and shuffling */
     align-items: center;
     color: white;
     font-family: 'Raleway', sans-serif;
-    position: relative;
+    position: absolute;
+    z-index: 10000;
   }
 
   .preloader__status {
