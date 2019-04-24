@@ -11,28 +11,14 @@
   <link rel="stylesheet" href="child.css" />
   <link rel="stylesheet" href="aos.css" />
   <link rel="stylesheet" href="menu.css" />
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
-
 </head>
 
 <body>
 
   <!-- preloader -->
-  <div class="preloader">
-    <div class="preloader__status">
-      <div status class="preloader__status-text">I'm {{loaded}} % done!</div>
-      <div class="preloader__status-loader">
-        <div loader :style="loadStyle" class="preloader__status-bar"></div>
-      </div>
-    </div>
+  <div class="loader" id="load">
+    <div class="heart"></div>
   </div>
-  <!-- <div class="frontpage container-fluid">
-    <div class="row">
-      <div class="col-xs-12">
-        <h1 class="frontpage__title">Nice to meet you, i'm a title!</h1>
-      </div>
-    </div>
-  </div> -->
 
   <!-- Menu Layout -->
 
@@ -731,8 +717,6 @@
   <script src="parallax.min.js"></script>
   <script src="vendorsec92.js"></script>
   <script src="appec92.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js"></script>
   <script>
     var rellax = new Rellax('.rellax');
   </script>
