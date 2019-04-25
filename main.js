@@ -32,7 +32,9 @@ if (hasTouch()) { // remove all :hover stylesheets
 //https://github.com/ivmello/easeScroll
 //Ease Scroll all pages
 // A $( document ).ready() block.
-$("html").easeScroll();
+
+// $("html").easeScroll();
+
 // $("html").easeScroll({
 //   frameRate: 60,
 //   animationTime: 1000,

@@ -1,4 +1,3 @@
-
 // ------------------------------------------
 // Rellax.js
 // Buttery smooth parallax library
@@ -23,7 +22,7 @@
     root.Rellax = factory();
   }
 }(this, function () {
-  var Rellax = function(el, options){
+  var Rellax = function (el, options) {
     "use strict";
 
     var self = Object.create(Rellax.prototype);
@@ -42,7 +41,9 @@
       window.mozRequestAnimationFrame ||
       window.msRequestAnimationFrame ||
       window.oRequestAnimationFrame ||
-      function(callback){ return setTimeout(callback, 1000 / 60); };
+      function (callback) {
+        return setTimeout(callback, 1000 / 60);
+      };
 
     // store the id for later use
     var loopId = null;
@@ -51,18 +52,18 @@
     var clearLoop = window.cancelAnimationFrame || window.mozCancelAnimationFrame || clearTimeout;
 
     // check which transform property to use
-    var transformProp = window.transformProp || (function(){
-        var testEl = document.createElement('div');
-        if (testEl.style.transform === null) {
-          var vendors = ['Webkit', 'Moz', 'ms'];
-          for (var vendor in vendors) {
-            if (testEl.style[ vendors[vendor] + 'Transform' ] !== undefined) {
-              return vendors[vendor] + 'Transform';
-            }
+    var transformProp = window.transformProp || (function () {
+      var testEl = document.createElement('div');
+      if (testEl.style.transform === null) {
+        var vendors = ['Webkit', 'Moz', 'ms'];
+        for (var vendor in vendors) {
+          if (testEl.style[vendors[vendor] + 'Transform'] !== undefined) {
+            return vendors[vendor] + 'Transform';
           }
         }
-        return 'transform';
-      })();
+      }
+      return 'transform';
+    })();
 
     // Default Settings
     self.options = {
@@ -73,12 +74,12 @@
       round: true,
       vertical: true,
       horizontal: false,
-      callback: function() {},
+      callback: function () {},
     };
 
     // User defined options (might have more in the future)
-    if (options){
-      Object.keys(options).forEach(function(key){
+    if (options) {
+      Object.keys(options).forEach(function (key) {
         self.options[key] = options[key];
       });
     }
@@ -116,8 +117,8 @@
 
 
     // Get and cache initial position of all elements
-    var cacheBlocks = function() {
-      for (var i = 0; i < self.elems.length; i++){
+    var cacheBlocks = function () {
+      for (var i = 0; i < self.elems.length; i++) {
         var block = createBlock(self.elems[i]);
         blocks.push(block);
       }
@@ -126,8 +127,8 @@
 
     // Let's kick this script off
     // Build array for cached element values
-    var init = function() {
-      for (var i = 0; i < blocks.length; i++){
+    var init = function () {
+      for (var i = 0; i < blocks.length; i++) {
         self.elems[i].style.cssText = blocks[i].style;
       }
 
@@ -150,10 +151,10 @@
     // We want to cache the parallax blocks'
     // values: base, top, height, speed
     // el: is dom object, return: el cache values
-    var createBlock = function(el) {
-      var dataPercentage = el.getAttribute( 'data-rellax-percentage' );
-      var dataSpeed = el.getAttribute( 'data-rellax-speed' );
-      var dataZindex = el.getAttribute( 'data-rellax-zindex' ) || 0;
+    var createBlock = function (el) {
+      var dataPercentage = el.getAttribute('data-rellax-percentage');
+      var dataSpeed = el.getAttribute('data-rellax-speed');
+      var dataZindex = el.getAttribute('data-rellax-zindex') || 0;
 
       // initializing at scrollY = 0 (top of browser), scrollX = 0 (left of browser)
       // ensures elements are positioned based on HTML layout.
@@ -166,8 +167,8 @@
         var scrollPosY = (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop);
         wrapperPosY = scrollPosY - self.options.wrapper.offsetTop;
       }
-      var posY = self.options.vertical ? ( dataPercentage || self.options.center ? wrapperPosY : 0 ) : 0;
-      var posX = self.options.horizontal ? ( dataPercentage || self.options.center ? (window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft) : 0 ) : 0;
+      var posY = self.options.vertical ? (dataPercentage || self.options.center ? wrapperPosY : 0) : 0;
+      var posX = self.options.horizontal ? (dataPercentage || self.options.center ? (window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft) : 0) : 0;
 
       var blockTop = posY + el.getBoundingClientRect().top;
       var blockHeight = el.clientHeight || el.offsetHeight || el.scrollHeight;
@@ -178,7 +179,10 @@
       // apparently parallax equation everyone uses
       var percentageY = dataPercentage ? dataPercentage : (posY - blockTop + screenY) / (blockHeight + screenY);
       var percentageX = dataPercentage ? dataPercentage : (posX - blockLeft + screenX) / (blockWidth + screenX);
-      if(self.options.center){ percentageX = 0.5; percentageY = 0.5; }
+      if (self.options.center) {
+        percentageX = 0.5;
+        percentageY = 0.5;
+      }
 
       // Optional individual block speed as data attr, otherwise global speed
       var speed = dataSpeed ? dataSpeed : self.options.speed;
@@ -201,9 +205,9 @@
 
         // Remove "transform" string and save the attribute
         if (delimiter) {
-          transform = " " + trimmedStyle.slice(11, delimiter).replace(/\s/g,'');
+          transform = " " + trimmedStyle.slice(11, delimiter).replace(/\s/g, '');
         } else {
-          transform = " " + trimmedStyle.slice(11).replace(/\s/g,'');
+          transform = " " + trimmedStyle.slice(11).replace(/\s/g, '');
         }
       }
 
@@ -224,7 +228,7 @@
     // set scroll position (posY, posX)
     // side effect method is not ideal, but okay for now
     // returns true if the scroll changed, false if nothing happened
-    var setPosition = function() {
+    var setPosition = function () {
       var oldY = posY;
       var oldX = posX;
 
@@ -254,7 +258,7 @@
     // Ahh a pure function, gets new transform value
     // based on scrollPosition and speed
     // Allow for decimal pixel values
-    var updatePosition = function(percentageX, percentageY, speed) {
+    var updatePosition = function (percentageX, percentageY, speed) {
       var result = {};
       var valueX = (speed * (100 * (1 - percentageX)));
       var valueY = (speed * (100 * (1 - percentageY)));
@@ -266,7 +270,7 @@
     };
 
     // Loop
-    var update = function() {
+    var update = function () {
       if (setPosition() && pause === false) {
         animate();
       }
@@ -276,14 +280,14 @@
     };
 
     // Transform3d on parallax element
-    var animate = function() {
+    var animate = function () {
       var positions;
-      for (var i = 0; i < self.elems.length; i++){
+      for (var i = 0; i < self.elems.length; i++) {
         var percentageY = ((posY - blocks[i].top + screenY) / (blocks[i].height + screenY));
         var percentageX = ((posX - blocks[i].left + screenX) / (blocks[i].width + screenX));
 
         // Subtracting initialize value, so element stays in same spot as HTML
-        positions = updatePosition(percentageX, percentageY, blocks[i].speed);// - blocks[i].baseX;
+        positions = updatePosition(percentageX, percentageY, blocks[i].speed); // - blocks[i].baseX;
         var positionY = positions.y - blocks[i].baseY;
         var positionX = positions.x - blocks[i].baseX;
 
@@ -297,8 +301,8 @@
       self.options.callback(positions);
     };
 
-    self.destroy = function() {
-      for (var i = 0; i < self.elems.length; i++){
+    self.destroy = function () {
+      for (var i = 0; i < self.elems.length; i++) {
         self.elems[i].style.cssText = blocks[i].style;
       }
 

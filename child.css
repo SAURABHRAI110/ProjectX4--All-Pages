@@ -12,7 +12,9 @@ body {
   hyphens: none;
 }
 
-
+body {
+  background-color: white;
+}
 
 html,
 body {
@@ -1406,8 +1408,8 @@ h5 {
 
 .showcase-container-home {
   display: flex;
-  width: 70%;
-  margin-left: 16.4%;
+  width: 72%;
+  margin-left: 15.4%;
   margin-bottom: -150px;
 
 }
@@ -1479,6 +1481,7 @@ h5 {
   width: 100%;
   height: 100%;
   perspective: 1000px;
+  margin-bottom: 38px;
 }
 
 .projects-image>img {
@@ -1519,6 +1522,7 @@ h5 {
   opacity: 1;
   transition: all 0.45s cucubic-bezier(.475, .425, 0, .995);
 }
+
 
 
 
