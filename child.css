@@ -1482,6 +1482,7 @@ h5 {
   height: 100%;
   perspective: 1000px;
   margin-bottom: 38px;
+  background-color: white;
 }
 
 .projects-image>img {
@@ -1521,6 +1522,7 @@ h5 {
   white-space: nowrap;
   opacity: 1;
   transition: all 0.45s cucubic-bezier(.475, .425, 0, .995);
+
 }
 
 
@@ -1535,6 +1537,10 @@ h5 {
   /* line-height: 70px; */
   letter-spacing: .02em;
   margin-bottom: 0px;
+
+
+
+
 
 
 }

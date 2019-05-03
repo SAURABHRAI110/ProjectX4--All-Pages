@@ -1,332 +1,148 @@
-// ------------------------------------------
-// Rellax.js
-// Buttery smooth parallax library
-// Copyright (c) 2016 Moe Amaya (@moeamaya)
-// MIT license
-//
-// Thanks to Paraxify.js and Jaime Cabllero
-// for parallax concepts
-// ------------------------------------------
-
-(function (root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module.
-    define([], factory);
-  } else if (typeof module === 'object' && module.exports) {
-    // Node. Does not work with strict CommonJS, but
-    // only CommonJS-like environments that support module.exports,
-    // like Node.
-    module.exports = factory();
-  } else {
-    // Browser globals (root is window)
-    root.Rellax = factory();
-  }
-}(this, function () {
-  var Rellax = function (el, options) {
-    "use strict";
-
-    var self = Object.create(Rellax.prototype);
-
-    var posY = 0;
-    var screenY = 0;
-    var posX = 0;
-    var screenX = 0;
-    var blocks = [];
-    var pause = true;
-
-    // check what requestAnimationFrame to use, and if
-    // it's not supported, use the onscroll event
-    var loop = window.requestAnimationFrame ||
-      window.webkitRequestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
-      window.msRequestAnimationFrame ||
-      window.oRequestAnimationFrame ||
-      function (callback) {
-        return setTimeout(callback, 1000 / 60);
-      };
-
-    // store the id for later use
-    var loopId = null;
-
-    // check what cancelAnimation method to use
-    var clearLoop = window.cancelAnimationFrame || window.mozCancelAnimationFrame || clearTimeout;
-
-    // check which transform property to use
-    var transformProp = window.transformProp || (function () {
-      var testEl = document.createElement('div');
-      if (testEl.style.transform === null) {
-        var vendors = ['Webkit', 'Moz', 'ms'];
-        for (var vendor in vendors) {
-          if (testEl.style[vendors[vendor] + 'Transform'] !== undefined) {
-            return vendors[vendor] + 'Transform';
-          }
+(function (n, h) {
+  "function" === typeof define && define.amd ? define([], h) : "object" === typeof module && module.exports ? module.exports = h() : n.Rellax = h()
+})("undefined" !== typeof window ? window : global, function () {
+  var n = function (h, p) {
+    var a = Object.create(n.prototype),
+      l = 0,
+      r = 0,
+      k = 0,
+      t = 0,
+      c = [],
+      u = !0,
+      B = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame || function (a) {
+        return setTimeout(a, 1E3 / 60)
+      },
+      q = null,
+      C = window.cancelAnimationFrame ||
+      window.mozCancelAnimationFrame || clearTimeout,
+      D = window.transformProp || function () {
+        var a = document.createElement("div");
+        if (null === a.style.transform) {
+          var b = ["Webkit", "Moz", "ms"],
+            e;
+          for (e in b)
+            if (void 0 !== a.style[b[e] + "Transform"]) return b[e] + "Transform"
         }
-      }
-      return 'transform';
-    })();
-
-    // Default Settings
-    self.options = {
+        return "transform"
+      }();
+    a.options = {
       speed: -2,
-      center: false,
+      center: !1,
       wrapper: null,
-      relativeToWrapper: false,
-      round: true,
-      vertical: true,
-      horizontal: false,
-      callback: function () {},
+      relativeToWrapper: !1,
+      round: !0,
+      vertical: !0,
+      horizontal: !1,
+      callback: function () {}
     };
-
-    // User defined options (might have more in the future)
-    if (options) {
-      Object.keys(options).forEach(function (key) {
-        self.options[key] = options[key];
-      });
-    }
-
-    // By default, rellax class
-    if (!el) {
-      el = '.rellax';
-    }
-
-    // check if el is a className or a node
-    var elements = typeof el === 'string' ? document.querySelectorAll(el) : [el];
-
-    // Now query selector
-    if (elements.length > 0) {
-      self.elems = elements;
-    }
-
-    // The elements don't exist
-    else {
-      throw new Error("The elements you're trying to select don't exist.");
-    }
-
-    // Has a wrapper and it exists
-    if (self.options.wrapper) {
-      if (!self.options.wrapper.nodeType) {
-        var wrapper = document.querySelector(self.options.wrapper);
-
-        if (wrapper) {
-          self.options.wrapper = wrapper;
-        } else {
-          throw new Error("The wrapper you're trying to use don't exist.");
-        }
-      }
-    }
-
-
-    // Get and cache initial position of all elements
-    var cacheBlocks = function () {
-      for (var i = 0; i < self.elems.length; i++) {
-        var block = createBlock(self.elems[i]);
-        blocks.push(block);
-      }
-    };
-
-
-    // Let's kick this script off
-    // Build array for cached element values
-    var init = function () {
-      for (var i = 0; i < blocks.length; i++) {
-        self.elems[i].style.cssText = blocks[i].style;
-      }
-
-      blocks = [];
-
-      screenY = window.innerHeight;
-      screenX = window.innerWidth;
-      setPosition();
-
-      cacheBlocks();
-
-      // If paused, unpause and set listener for window resizing events
-      if (pause) {
-        window.addEventListener('resize', init);
-        pause = false;
-      }
-      animate();
-    };
-
-    // We want to cache the parallax blocks'
-    // values: base, top, height, speed
-    // el: is dom object, return: el cache values
-    var createBlock = function (el) {
-      var dataPercentage = el.getAttribute('data-rellax-percentage');
-      var dataSpeed = el.getAttribute('data-rellax-speed');
-      var dataZindex = el.getAttribute('data-rellax-zindex') || 0;
-
-      // initializing at scrollY = 0 (top of browser), scrollX = 0 (left of browser)
-      // ensures elements are positioned based on HTML layout.
-      //
-      // If the element has the percentage attribute, the posY and posX needs to be
-      // the current scroll position's value, so that the elements are still positioned based on HTML layout
-      var wrapperPosY = self.options.wrapper ? self.options.wrapper.scrollTop : (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop);
-      // If the option relativeToWrapper is true, use the wrappers offset to top, subtracted from the current page scroll.
-      if (self.options.relativeToWrapper) {
-        var scrollPosY = (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop);
-        wrapperPosY = scrollPosY - self.options.wrapper.offsetTop;
-      }
-      var posY = self.options.vertical ? (dataPercentage || self.options.center ? wrapperPosY : 0) : 0;
-      var posX = self.options.horizontal ? (dataPercentage || self.options.center ? (window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft) : 0) : 0;
-
-      var blockTop = posY + el.getBoundingClientRect().top;
-      var blockHeight = el.clientHeight || el.offsetHeight || el.scrollHeight;
-
-      var blockLeft = posX + el.getBoundingClientRect().left;
-      var blockWidth = el.clientWidth || el.offsetWidth || el.scrollWidth;
-
-      // apparently parallax equation everyone uses
-      var percentageY = dataPercentage ? dataPercentage : (posY - blockTop + screenY) / (blockHeight + screenY);
-      var percentageX = dataPercentage ? dataPercentage : (posX - blockLeft + screenX) / (blockWidth + screenX);
-      if (self.options.center) {
-        percentageX = 0.5;
-        percentageY = 0.5;
-      }
-
-      // Optional individual block speed as data attr, otherwise global speed
-      var speed = dataSpeed ? dataSpeed : self.options.speed;
-
-      var bases = updatePosition(percentageX, percentageY, speed);
-
-      // ~~Store non-translate3d transforms~~
-      // Store inline styles and extract transforms
-      var style = el.style.cssText;
-      var transform = '';
-
-      // Check if there's an inline styled transform
-      if (style.indexOf('transform') >= 0) {
-        // Get the index of the transform
-        var index = style.indexOf('transform');
-
-        // Trim the style to the transform point and get the following semi-colon index
-        var trimmedStyle = style.slice(index);
-        var delimiter = trimmedStyle.indexOf(';');
-
-        // Remove "transform" string and save the attribute
-        if (delimiter) {
-          transform = " " + trimmedStyle.slice(11, delimiter).replace(/\s/g, '');
-        } else {
-          transform = " " + trimmedStyle.slice(11).replace(/\s/g, '');
-        }
-      }
-
-      return {
-        baseX: bases.x,
-        baseY: bases.y,
-        top: blockTop,
-        left: blockLeft,
-        height: blockHeight,
-        width: blockWidth,
-        speed: speed,
-        style: style,
-        transform: transform,
-        zindex: dataZindex
+    p && Object.keys(p).forEach(function (d) {
+      a.options[d] = p[d]
+    });
+    h || (h = ".rellax");
+    var m = "string" === typeof h ? document.querySelectorAll(h) : [h];
+    if (0 < m.length) {
+      a.elems = m;
+      if (a.options.wrapper && !a.options.wrapper.nodeType)
+        if (m = document.querySelector(a.options.wrapper)) a.options.wrapper = m;
+        else {
+          console.warn("Rellax: The wrapper you're trying to use doesn't exist.");
+          return
+        } var w = function () {
+          for (var d = 0; d < c.length; d++) a.elems[d].style.cssText = c[d].style;
+          c = [];
+          r = window.innerHeight;
+          t = window.innerWidth;
+          x();
+          for (d = 0; d < a.elems.length; d++) {
+            var b = a.elems[d],
+              e = b.getAttribute("data-rellax-percentage"),
+              g = b.getAttribute("data-rellax-speed"),
+              h = b.getAttribute("data-rellax-zindex") ||
+              0,
+              l = b.getAttribute("data-rellax-min"),
+              n = b.getAttribute("data-rellax-max"),
+              v = a.options.wrapper ? a.options.wrapper.scrollTop : window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+            a.options.relativeToWrapper && (v = (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) - a.options.wrapper.offsetTop);
+            var f = a.options.vertical ? e || a.options.center ? v : 0 : 0,
+              k = a.options.horizontal ? e || a.options.center ? a.options.wrapper ? a.options.wrapper.scrollLeft : window.pageXOffset ||
+              document.documentElement.scrollLeft || document.body.scrollLeft : 0 : 0;
+            v = f + b.getBoundingClientRect().top;
+            var m = b.clientHeight || b.offsetHeight || b.scrollHeight,
+              p = k + b.getBoundingClientRect().left,
+              q = b.clientWidth || b.offsetWidth || b.scrollWidth;
+            f = e ? e : (f - v + r) / (m + r);
+            e = e ? e : (k - p + t) / (q + t);
+            a.options.center && (f = e = .5);
+            g = g ? g : a.options.speed;
+            e = y(e, f, g);
+            b = b.style.cssText;
+            f = "";
+            0 <= b.indexOf("transform") && (f = b.indexOf("transform"), f = b.slice(f), f = (k = f.indexOf(";")) ? " " + f.slice(11, k).replace(/\s/g, "") : " " + f.slice(11).replace(/\s/g,
+              ""));
+            c.push({
+              baseX: e.x,
+              baseY: e.y,
+              top: v,
+              left: p,
+              height: m,
+              width: q,
+              speed: g,
+              style: b,
+              transform: f,
+              zindex: h,
+              min: l,
+              max: n
+            })
+          }
+          u && (window.addEventListener("resize", w), u = !1);
+          z()
+        },
+        x = function () {
+          var d = l,
+            b = k;
+          l = a.options.wrapper ? a.options.wrapper.scrollTop : (document.documentElement || document.body.parentNode || document.body).scrollTop || window.pageYOffset;
+          k = a.options.wrapper ? a.options.wrapper.scrollLeft : (document.documentElement || document.body.parentNode || document.body).scrollLeft || window.pageXOffset;
+          a.options.relativeToWrapper &&
+            (l = ((document.documentElement || document.body.parentNode || document.body).scrollTop || window.pageYOffset) - a.options.wrapper.offsetTop);
+          return d != l && a.options.vertical || b != k && a.options.horizontal ? !0 : !1
+        },
+        y = function (d, b, e) {
+          var c = {};
+          d = 100 * e * (1 - d);
+          b = 100 * e * (1 - b);
+          c.x = a.options.round ? Math.round(d) : Math.round(100 * d) / 100;
+          c.y = a.options.round ? Math.round(b) : Math.round(100 * b) / 100;
+          return c
+        },
+        A = function () {
+          x() && !1 === u && z();
+          q = B(A)
+        },
+        z = function () {
+          for (var d, b = 0; b < a.elems.length; b++) {
+            d = y((k - c[b].left + t) / (c[b].width + t), (l -
+              c[b].top + r) / (c[b].height + r), c[b].speed);
+            var e = d.y - c[b].baseY,
+              g = d.x - c[b].baseX;
+            null !== c[b].min && (a.options.vertical && !a.options.horizontal && (e = e <= c[b].min ? c[b].min : e), a.options.horizontal && !a.options.vertical && (g = g <= c[b].min ? c[b].min : g));
+            null !== c[b].max && (a.options.vertical && !a.options.horizontal && (e = e >= c[b].max ? c[b].max : e), a.options.horizontal && !a.options.vertical && (g = g >= c[b].max ? c[b].max : g));
+            a.elems[b].style[D] = "translate3d(" + (a.options.horizontal ? g : "0") + "px," + (a.options.vertical ? e : "0") + "px," + c[b].zindex +
+              "px) " + c[b].transform
+          }
+          a.options.callback(d)
+        };
+      a.destroy = function () {
+        for (var d = 0; d < a.elems.length; d++) a.elems[d].style.cssText = c[d].style;
+        u || (window.removeEventListener("resize", w), u = !0);
+        C(q);
+        q = null
       };
-    };
-
-    // set scroll position (posY, posX)
-    // side effect method is not ideal, but okay for now
-    // returns true if the scroll changed, false if nothing happened
-    var setPosition = function () {
-      var oldY = posY;
-      var oldX = posX;
-
-      posY = self.options.wrapper ? self.options.wrapper.scrollTop : (document.documentElement || document.body.parentNode || document.body).scrollTop || window.pageYOffset;
-      posX = self.options.wrapper ? self.options.wrapper.scrollLeft : (document.documentElement || document.body.parentNode || document.body).scrollLeft || window.pageXOffset;
-      // If option relativeToWrapper is true, use relative wrapper value instead.
-      if (self.options.relativeToWrapper) {
-        var scrollPosY = (document.documentElement || document.body.parentNode || document.body).scrollTop || window.pageYOffset;
-        posY = scrollPosY - self.options.wrapper.offsetTop;
-      }
-
-
-      if (oldY != posY && self.options.vertical) {
-        // scroll changed, return true
-        return true;
-      }
-
-      if (oldX != posX && self.options.horizontal) {
-        // scroll changed, return true
-        return true;
-      }
-
-      // scroll did not change
-      return false;
-    };
-
-    // Ahh a pure function, gets new transform value
-    // based on scrollPosition and speed
-    // Allow for decimal pixel values
-    var updatePosition = function (percentageX, percentageY, speed) {
-      var result = {};
-      var valueX = (speed * (100 * (1 - percentageX)));
-      var valueY = (speed * (100 * (1 - percentageY)));
-
-      result.x = self.options.round ? Math.round(valueX) : Math.round(valueX * 100) / 100;
-      result.y = self.options.round ? Math.round(valueY) : Math.round(valueY * 100) / 100;
-
-      return result;
-    };
-
-    // Loop
-    var update = function () {
-      if (setPosition() && pause === false) {
-        animate();
-      }
-
-      // loop again
-      loopId = loop(update);
-    };
-
-    // Transform3d on parallax element
-    var animate = function () {
-      var positions;
-      for (var i = 0; i < self.elems.length; i++) {
-        var percentageY = ((posY - blocks[i].top + screenY) / (blocks[i].height + screenY));
-        var percentageX = ((posX - blocks[i].left + screenX) / (blocks[i].width + screenX));
-
-        // Subtracting initialize value, so element stays in same spot as HTML
-        positions = updatePosition(percentageX, percentageY, blocks[i].speed); // - blocks[i].baseX;
-        var positionY = positions.y - blocks[i].baseY;
-        var positionX = positions.x - blocks[i].baseX;
-
-        var zindex = blocks[i].zindex;
-
-        // Move that element
-        // (Set the new translation and append initial inline transforms.)
-        var translate = 'translate3d(' + (self.options.horizontal ? positionX : '0') + 'px,' + (self.options.vertical ? positionY : '0') + 'px,' + zindex + 'px) ' + blocks[i].transform;
-        self.elems[i].style[transformProp] = translate;
-      }
-      self.options.callback(positions);
-    };
-
-    self.destroy = function () {
-      for (var i = 0; i < self.elems.length; i++) {
-        self.elems[i].style.cssText = blocks[i].style;
-      }
-
-      // Remove resize event listener if not pause, and pause
-      if (!pause) {
-        window.removeEventListener('resize', init);
-        pause = true;
-      }
-
-      // Clear the animation loop to prevent possible memory leak
-      clearLoop(loopId);
-      loopId = null;
-    };
-
-    // Init
-    init();
-
-    // Start the loop
-    update();
-
-    // Allow to recalculate the initial values whenever we want
-    self.refresh = init;
-
-    return self;
+      w();
+      A();
+      a.refresh = w;
+      return a
+    }
+    console.warn("Rellax: The elements you're trying to select don't exist.")
   };
-  return Rellax;
-}));
+  return n
+});
