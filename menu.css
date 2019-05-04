@@ -2321,17 +2321,10 @@ scrollbar .overscroll-glow {
 
 .c-nav_wordmark {
     display: block;
-    padding: 2.5rem;
-    text-align: center;
-    height: 7.9375rem;
+    padding-top: 20px;
     opacity: 0;
-    -webkit-transform: translateX(-60px);
-    -ms-transform: translateX(-60px);
-    transform: translateX(-60px);
-    -webkit-transition: opacity .6s cubic-bezier(.215, .61, .355, 1), -webkit-transform .6s cubic-bezier(.215, .61, .355, 1);
-    transition: opacity .6s cubic-bezier(.215, .61, .355, 1), -webkit-transform .6s cubic-bezier(.215, .61, .355, 1);
-    transition: opacity .6s cubic-bezier(.215, .61, .355, 1), transform .6s cubic-bezier(.215, .61, .355, 1);
-    transition: opacity .6s cubic-bezier(.215, .61, .355, 1), transform .6s cubic-bezier(.215, .61, .355, 1), -webkit-transform .6s cubic-bezier(.215, .61, .355, 1)
+    padding-left: 20px;
+
 }
 
 .dom-is-loaded .c-nav_wordmark,
@@ -2344,64 +2337,18 @@ scrollbar .overscroll-glow {
     transition-delay: 2s
 }
 
-.c-nav_wordmark svg {
-    fill: #222325;
-    width: 5.1875rem;
-    height: .875rem
-}
 
-@media (max-width:699px) {
-    .c-nav_wordmark svg {
-        width: 3.75rem;
-        height: .625rem
-    }
-}
 
 @media (max-width:999px) {
     .c-nav_wordmark {
-        display: inline-block;
-        width: 25%;
-        height: auto;
-        padding: 1.875rem 3.75rem
+        padding-top: 0px;
+        padding-left: 40px;
     }
 }
 
-@media (max-width:699px) {
-    .c-nav_wordmark {
-        width: auto;
-        padding: 1.25rem 1.875rem
-    }
-}
 
-.c-nav_logo_mobile {
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center
-}
 
-.c-nav_logo_mobile svg {
-    width: 40px;
-    height: 40px;
-    fill: #000
-}
 
-@media (max-width:999px) {
-    .c-nav_logo_mobile svg {
-        width: 30px;
-        height: 30px
-    }
-}
-
-@media (min-width:1000px) {
-    .c-nav_logo_mobile {
-        visibility: hidden
-    }
-}
 
 .c-nav_text {
     position: absolute;
