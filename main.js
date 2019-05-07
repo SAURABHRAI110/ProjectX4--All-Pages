@@ -28,21 +28,33 @@ if (hasTouch()) { // remove all :hover stylesheets
 }
 
 
+
 //Nice Scrolls
 
-
-
-$("body").niceScroll({
-  cursorcolor: "#fc3a52",
-  cursorwidth: "10px",
-  background: "white",
-  // cursorborder: "1px solid aquamarine",
-  cursorborderradius: 0,
-  scrollspeed: 60, // scrolling speed
-  mousescrollstep: 40, // scrolling speed with mouse wheel (pixel)
-  smoothscroll: true,
-  preventmultitouchscrolling: true,
+$("html").easeScroll({
+  frameRate: 60,
+  animationTime: 1200,
+  stepSize: 120,
+  pulseAlgorithm: !0,
+  pulseScale: 8,
+  pulseNormalize: 1,
+  accelerationDelta: 20,
+  accelerationMax: 1,
+  keyboardSupport: !0,
+  arrowScroll: 50
 });
+
+// $("body").niceScroll({
+//   cursorcolor: "#fc3a52",
+//   cursorwidth: "10px",
+//   background: "white",
+//   // cursorborder: "1px solid aquamarine",
+//   cursorborderradius: 0,
+//   scrollspeed: 60, // scrolling speed
+//   mousescrollstep: 40, // scrolling speed with mouse wheel (pixel)
+//   smoothscroll: true,
+//   zindex: "auto" | [1000],
+// });
 
 
 
