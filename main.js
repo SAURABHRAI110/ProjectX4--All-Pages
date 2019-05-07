@@ -1,7 +1,7 @@
-//preloader
-window.onload = function () {
-  document.getElementById('load').style.display = 'none';
-}
+// //preloader
+// window.onload = function () {
+//   document.getElementById('load').style.display = 'none';
+// }
 //for touch devices
 //https://stackoverflow.com/questions/23885255/how-to-remove-ignore-hover-css-style-on-touch-devices
 function hasTouch() {
@@ -27,30 +27,8 @@ if (hasTouch()) { // remove all :hover stylesheets
   } catch (ex) {}
 }
 
-//https://github.com/ivmello/easeScroll
-//Ease Scroll all pages
-// A $( document ).ready() block.
 
-// $("html").easeScroll();
-
-
-
-
-// $("html").easeScroll({
-//   frameRate: 60,
-//   animationTime: 1000,
-//   stepSize: 120,
-//   pulseAlgorithm: !0,
-//   pulseScale: 8,
-//   pulseNormalize: 1,
-//   accelerationDelta: 20,
-//   accelerationMax: 1,
-//   keyboardSupport: !0,
-//   arrowScroll: 50
-// });
-
-
-//NIce Scroll
+//Nice Scrolls
 
 
 
@@ -63,6 +41,7 @@ $("body").niceScroll({
   scrollspeed: 60, // scrolling speed
   mousescrollstep: 40, // scrolling speed with mouse wheel (pixel)
   smoothscroll: true,
+  preventmultitouchscrolling: true,
 });
 
 
