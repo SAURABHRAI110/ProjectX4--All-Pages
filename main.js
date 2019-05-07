@@ -2,8 +2,6 @@
 window.onload = function () {
   document.getElementById('load').style.display = 'none';
 }
-
-
 //for touch devices
 //https://stackoverflow.com/questions/23885255/how-to-remove-ignore-hover-css-style-on-touch-devices
 function hasTouch() {
@@ -35,6 +33,9 @@ if (hasTouch()) { // remove all :hover stylesheets
 
 // $("html").easeScroll();
 
+
+
+
 // $("html").easeScroll({
 //   frameRate: 60,
 //   animationTime: 1000,
@@ -49,18 +50,31 @@ if (hasTouch()) { // remove all :hover stylesheets
 // });
 
 
+//NIce Scroll
 
+
+
+$("body").niceScroll({
+  cursorcolor: "#fc3a52",
+  cursorwidth: "10px",
+  background: "white",
+  // cursorborder: "1px solid aquamarine",
+  cursorborderradius: 0,
+  scrollspeed: 60, // scrolling speed
+  mousescrollstep: 40, // scrolling speed with mouse wheel (pixel)
+  smoothscroll: true,
+});
 
 
 
 //Lottie BodyMovin
-var animation = bodymovin.loadAnimation({
-  container: document.getElementById('bm'),
-  renderer: 'svg',
-  loop: true,
-  autoplay: true,
-  path: 'data.json'
-})
+// var animation = bodymovin.loadAnimation({
+//   container: document.getElementById('bm'),
+//   renderer: 'svg',
+//   loop: true,
+//   autoplay: true,
+//   path: 'data.json'
+// })
 
 
 //Wave Background
