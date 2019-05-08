@@ -36,7 +36,7 @@ body {
 
   /* Remove scrollbar space */
   background: transparent;
-  width: 8px;
+  /* width: 8px; */
   /* Optional: just make scrollbar invisible */
 }
 
