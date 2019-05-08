@@ -33,9 +33,10 @@ body {
 } */
 
 ::-webkit-scrollbar {
-  width: 6px;
+
   /* Remove scrollbar space */
   background: transparent;
+  width: 8px;
   /* Optional: just make scrollbar invisible */
 }
 
@@ -44,16 +45,10 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #fc3a52;
 
+
 }
 
-::-webkit-scrollbar-thumb:hover {
-  border: 3px;
-}
 
-::-webkit-scrollbar-track-piece {
-  width: 0px;
-  width: 20px;
-}
 
 
 
