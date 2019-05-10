@@ -1985,6 +1985,12 @@ Sorting and shuffling */
   color: #171717;
 }
 
+.about-subtitle {
+  font-size: 22px;
+  font-family: saurabh-book;
+  line-height: 35px;
+}
+
 .hl {
   border-top: 1px solid #797979;
   width: 100%;
@@ -2012,6 +2018,22 @@ Sorting and shuffling */
   width: 100%;
   position: absolute;
   bottom: 0%;
+}
+
+@media (max-width:1199px) {
+
+  .about-title {
+    font-size: 66px;
+    line-height: 76px;
+  }
+}
+
+@media (max-width:999px) {
+
+  .about-title {
+    font-size: 55px;
+    line-height: 70px;
+  }
 }
 
 /* .about-vl {
@@ -2209,7 +2231,7 @@ Sorting and shuffling */
 }
 
 .a-block-right {
-  margin-top: 3%;
+  margin-top: 4%;
   margin-right: 17%;
   margin-bottom: 3%;
   width: 31.5%;
@@ -2218,10 +2240,10 @@ Sorting and shuffling */
 }
 
 .c-text {
-  font-family: saurabh-book;
-  font-size: 27px;
+
   position: relative;
   line-height: 20px;
+
   transition: all 0.2s ease-in-out;
 }
 
@@ -2343,7 +2365,8 @@ Sorting and shuffling */
   top: 20%;
   left: 20%;
   opacity: 0;
-  transition: 0.1s;
+  z-index: 0;
+  transition: opacity 400ms;
 }
 
 .c-text:hover+.c-pic {
