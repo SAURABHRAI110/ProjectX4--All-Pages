@@ -893,7 +893,8 @@ gallery with grid and changing image with time and parallax */
   }
 
   .para {
-    font-size: 20px;
+    font-size: 23px;
+    line-height: 39px;
   }
 }
 
@@ -906,7 +907,8 @@ gallery with grid and changing image with time and parallax */
   }
 
   .para {
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 35px;
   }
 
   .home-section-2 {
@@ -917,6 +919,11 @@ gallery with grid and changing image with time and parallax */
 @media screen and (max-width: 500px) {
   .home-section-2 {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .para {
+    font-size: 18px;
+    line-height: 32px;
   }
 }
 
@@ -3284,7 +3291,22 @@ h5 {
     margin-left: 10%;
     margin-right: 10%;
   }
+
+  .info-block-heading {
+    font-size: 37px;
+  }
+
+
 }
+
+@media screen and (max-width:800px) {
+
+
+  .info-block-heading {
+    font-size: 34px;
+  }
+}
+
 
 /* Showcase Filming Eye */
 
