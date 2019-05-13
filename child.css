@@ -3102,26 +3102,63 @@ Sorting and shuffling */
   margin-top: 10px;
 }
 
-.casestudy1-section2 {
-  width: 100vw;
-  height: auto;
+.c-section3 {
+  /* width: 100vw;
+  min-height: 40vh; */
   position: relative;
   background-color: white;
 }
 
-.flex {
+.c-info {
+  left: 20%;
+  width: 56%;
+  position: relative;
+  z-index: 4;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
 }
+
+/* .c-info-left {
+  left: 0%;
+  position: absolute;
+}
+
+.c-info-right {
+  left: 35%;
+  position: absolute;
+
+} */
+
+/* .c-info-left1 {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+.c-info-right1 {
+  position: absolute;
+  top: 0%;
+}
+
+.c-info-left2 {
+  position: absolute;
+  top: 30%;
+}
+
+.c-info-right2 {
+  position: absolute;
+  top: 30%;
+} */
+
+
+
 
 .space-between {
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.w-220 {
-  min-width: 300px;
-}
+
 
 h5 {
   font-family: saurabh-book;
