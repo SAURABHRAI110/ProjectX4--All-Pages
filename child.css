@@ -881,7 +881,7 @@ gallery with grid and changing image with time and parallax */
   height: 60vh;
 }
 
-.
+
 /* Media Queries
 -----------------------------
 ------------------------------- */
@@ -3118,37 +3118,13 @@ Sorting and shuffling */
   flex-wrap: wrap;
 }
 
-/* .c-info-left {
-  left: 0%;
-  position: absolute;
+@media screen and (max-width:999px) {
+  .c-info {
+    left: 10%;
+    width: 80%;
+  }
 }
 
-.c-info-right {
-  left: 35%;
-  position: absolute;
-
-} */
-
-/* .c-info-left1 {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-}
-
-.c-info-right1 {
-  position: absolute;
-  top: 0%;
-}
-
-.c-info-left2 {
-  position: absolute;
-  top: 30%;
-}
-
-.c-info-right2 {
-  position: absolute;
-  top: 30%;
-} */
 
 
 
@@ -3300,6 +3276,14 @@ h5 {
 
 .research-photos-grid>.big {
   grid-column: span 2;
+}
+
+
+@media screen and (max-width:999px) {
+  .casestudy-info-block {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 }
 
 /* Showcase Filming Eye */
