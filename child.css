@@ -322,10 +322,10 @@ Home Page
   color: transparent;
 }
 
-.hero-para {
+/* .hero-para {
   margin-top: -20px;
   margin-right: 0%;
-}
+} */
 
 .para {
   font-family: saurabh-book;
@@ -444,12 +444,12 @@ Home Page
     padding-top: 120px;
   }
 
-  .hero-para {
+  /* .hero-para {
     padding-top: 40px;
     font-size: 18px;
     line-height: 32px;
 
-  }
+  } */
 
   .home-section-1 {
     min-height: 79vh;
@@ -3098,9 +3098,9 @@ Sorting and shuffling */
   font-family: saurabh-book;
 }
 
-.hero-para {
+/* .hero-para {
   margin-top: 10px;
-}
+} */
 
 .c-section3 {
   /* width: 100vw;
