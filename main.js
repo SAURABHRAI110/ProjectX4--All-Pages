@@ -117,7 +117,13 @@ if (document.getElementById("canv")) {
 // aos scroll Animation
 //https://github.com/michalsnik/aos
 
-AOS.init();
+
+AOS.init({
+
+  once: true, // whether animation should happen only once - while scrolling down
+
+
+});
 
 //basic UI
 // function changeLines() {
